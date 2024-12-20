@@ -1,0 +1,85 @@
+h2 {
+    margin: 4rem auto;
+    margin-bottom: 1rem;
+    color:rgb(27,32,40);
+    font-weight: bold;
+}
+
+h3 {
+    color:rgb(234, 207, 31) ;
+    font-weight: bold;
+    margin-bottom: 4rem;
+}
+
+h3 span {
+    font-size: 1rem;
+    color: rgb(156,59,64);
+}
+
+#container {
+    width: 90rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-inline: auto;
+    margin-bottom: 4rem;
+}
+
+.content-container {
+    margin-inline: auto;
+    width: 25rem;
+    height: 31rem;
+    border: 2px solid rgb(9, 24, 58);
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    border:none;
+    border-bottom: 2px solid rgb(9, 24, 58); 
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.img-container img {
+    width: 25rem;
+    height: 25rem; 
+    object-fit: cover; 
+    display: block; 
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.img-container a {
+    text-decoration: none;
+}   
+
+.content-container:hover {
+    background-color: rgb(27, 32, 40);
+    color: rgb(234, 207, 31);
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.content-container p {
+    margin: 0.5rem 0;
+    margin-bottom: 0;
+}
+
+.subheading {
+    margin: 0;
+    text-decoration: none;
+    color: inherit; 
+    font-size: 1.2rem;
+    text-decoration: none; 
+}
+
+.subheading:hover {
+    color: inherit; 
+}
+
