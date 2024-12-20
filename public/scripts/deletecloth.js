@@ -1,6 +1,5 @@
 let DeleteClothId = null;
 
-// 모든 삭제 버튼 선택
 const deleteButtons = document.querySelectorAll('.delete-btn');
 
 const ConfirmDeleteButton = document.getElementById('confirmDeletebtn');
@@ -13,7 +12,6 @@ deleteButtons.forEach(button => {
 });
 
 function openDeleteWindow(buttonElement) {
-    // data-id 속성의 값을 가져옴
     DeleteClothId = buttonElement.dataset.id; 
     console.log(DeleteClothId);
     const deleteWindow = document.getElementById('deleteWindow');
@@ -36,7 +34,6 @@ async function ConfirmDelete() {
             });
 
             if (response.ok) {
-                // 삭제가 성공하면 해당 항목을 화면에서 제거
                 const deleteButton = document.querySelector(`button[data-id='${DeleteClothId}']`);
                 const clothItem = deleteButton.previousElementSibling;
                 deleteButton.remove();
