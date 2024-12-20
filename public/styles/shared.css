@@ -51,7 +51,6 @@ body {
 }
 
 #logo a:hover {
-    /* color: rgb(210, 180, 140); */
     border: 1.5px dashed rgb(234, 207, 31);
     border-radius: 6px;
 }
@@ -80,8 +79,6 @@ nav {
   
 #main-header .nav-item a:hover,
 #main-header .nav-item a:active {
-    /* color: rgb(75, 83, 32);
-    background-color:rgba(210, 180, 140, 0.2); */
     color: rgb(234, 207, 31);
     background-color: rgb(9, 24, 58);
     border: 1.5px dashed rgb(234, 207, 31);
