@@ -15,11 +15,6 @@ h2 {
         60px 0px, calc(100% - 60px) 0px, 
         100% 60px, 100% calc(100% - 60px), 
         calc(100% - 60px) 100%, 60px 100%, 
-<<<<<<< HEAD
-        0px calc(100% - 60px), 0px 60px 
-=======
-        0px calc(100% - 60px), 0px 60px
->>>>>>> 9f26047cecc9365b737bb42b88fc50488b1aee6b
     );
 }
 
@@ -56,11 +51,6 @@ button {
     clip-path: polygon(
         10px 0px, calc(100% - 10px) 0px, 
         100% 10px, 100% calc(100% - 10px), 
-<<<<<<< HEAD
-        calc(100% - 10px) 100%, 10px 100%, 
-=======
-        calc(100% - 10px) 100%, 10px 100%,
->>>>>>> 9f26047cecc9365b737bb42b88fc50488b1aee6b
         0px calc(100% - 10px), 0px 10px 
     );
 }

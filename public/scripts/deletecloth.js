@@ -34,10 +34,6 @@ async function ConfirmDelete() {
             });
 
             if (response.ok) {
-<<<<<<< HEAD
-                // 삭제가 성공하면 해당 항목을 화면에서 제거    
-=======
->>>>>>> 9f26047cecc9365b737bb42b88fc50488b1aee6b
                 const deleteButton = document.querySelector(`button[data-id='${DeleteClothId}']`);
                 const clothItem = deleteButton.previousElementSibling;
                 deleteButton.remove();
