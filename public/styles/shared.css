@@ -32,9 +32,9 @@ body {
     align-items: center;
     box-sizing: border-box;
     border-bottom: 1.5px solid rgb(9, 24, 58);
-    position: sticky; /* 스크롤 시 고정 */
-    top: 0; /* 뷰포트의 맨 위에 고정 */
-    z-index: 1000; /* 다른 콘텐츠보다 위로 */
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
 }
 
 

@@ -1,4 +1,3 @@
-// ejs를 웹에서 실행시키기 위해서 express 필요 
 const express = require('express');
 
 const app = express();
@@ -11,10 +10,8 @@ const wishRouter = require('./routes/wish');
 
 const db = require('./data/database');
 
-// 뷰 엔진을 ejs로 설정
 app.set('view engine', 'ejs');
 
-// ejs 파일 위치 지정
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
@@ -29,7 +26,7 @@ app.use((req, res) => {
 });
 
 app.use((err, req, res, next) => {
-    console.error(err.stack); // 에러 로그 출력
+    console.error(err.stack); 
     res.status(500).render('500');
 });
 
