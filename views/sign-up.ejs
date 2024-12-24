@@ -2,12 +2,76 @@
 <html lang="en">
   <head>
     <%-include('includes/head') %>
-    <link rel="stylesheet" href="/styles/sign-up.css">
+    <link rel="stylesheet" href="/styles/sign-up.css" />
   </head>
   <body>
     <%-include('includes/header') %>
     <main>
-        회원가입
+      <h2>회원가입</h2>
+      <div id="form-container">
+        <div id="yellow-line">
+          <form action="sign-up" method="POST">
+            <div class="form-item">
+              <label for="email"></label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="이메일(아이디)"
+              />
+              <p class="caution">경고문</p>
+            </div>
+
+            <div class="form-item">
+              <label for="password"></label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="비밀번호"
+              />
+              <p class="caution">경고문</p>
+            </div>
+
+            <div class="form-item">
+              <label for="confirmpassword"></label>
+              <input
+                type="password"
+                name="confirmpassword"
+                id="confirmpassword"
+                placeholder="비밀번호 재확인"
+              />
+              <p class="caution">경고문</p>
+            </div>
+
+            <div class="form-item">
+              <label for="name"></label>
+              <input
+                type="text"
+                name="name"
+                placeholder="이름"
+              />
+              <p class="caution">경고문</p>
+            </div>
+
+            <div class="form-item">
+              <label for="nickname"></label>
+              <input
+                type="text"
+                name="nickname"
+                id="nickname"
+                placeholder="닉네임"
+              />
+              <p class="caution">경고문</p>
+            </div>
+
+            <div id="btn-container">
+              <a href="/index" id="cancelbutton">취소</a>
+              <button>회원가입</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <%-include('includes/footer') %>
