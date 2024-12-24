@@ -5,6 +5,7 @@ const app = express();
 const path = require('path');
 
 const defaultRouter = require('./routes/route'); 
+const userRouter = require('./routes/wish'); 
 const addRouter = require('./routes/add'); 
 const wishRouter = require('./routes/wish'); 
 
@@ -18,6 +19,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', defaultRouter);
+app.use('/', userRouter);
 app.use('/', addRouter);
 app.use('/', wishRouter); 
 
