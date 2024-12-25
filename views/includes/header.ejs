@@ -1,36 +1,54 @@
 <header id="main-header">
   <div id="logo"><a href="/">MyCloset</a></div>
   <nav>
+    <% if (!isAuth) { %>
     <ul>
-      <!-- <li class="nav-item">
-        <a href="/addclothes">AddClothes</a>
-      </li>
+      <li class="nav-item"><a href="/stockist">Stockist</a></li>
+      <li class="nav-item"><a href="/brand">Brand</a></li>
+      <li class="nav-item"><a href="/denim">Denim</a></li>
+      <li class="nav-item"><a href="/sign-up">Signup</a></li>
+      <li class="nav-item"><a href="/login">Login</a></li>
+    </ul>
+    <% } else { %>
+    <ul>
+      <li class="nav-item"><a href="/cafe">Cafe</a></li>
+      <li class="nav-item"><a href="/stockist">Stockist</a></li>
+      <li class="nav-item"><a href="/brand">Brand</a></li>
+      <li class="nav-item"><a href="/denim">Denim</a></li>
       <li class="nav-item">
-        <a href="/wishclothes">WishClothing</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a href="/about">About</a>
-      </li> -->
-      <li class="nav-item">
-        <a href="/stockist">Stockist</a>
-      </li>
-      <li class="nav-item">
-        <a href="/brand">Brand</a>
-      </li>
-      <li class="nav-item">
-        <a href="/denim">Denim</a>
-      </li>
-      <li class="nav-item">
-        <a href="/sign-up">Signup</a>
-      </li>
-      <li class="nav-item">
-        <a href="/login">Login</a>
+        <form action="/logout" method="POST">
+          <button>Logout</button>
+        </form>
       </li>
     </ul>
+    <% } %>
   </nav>
-  <button id="drawer-btn">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+
+  <div id="aside-navigation">
+    <span class="aside-items"></span>
+    <span class="aside-items"></span>
+    <span class="aside-items"></span>
+  </div>
 </header>
+
+<div id="aside-container">
+  <ul>
+    <% if (session.isAuthenticated) { %>
+      <li class="aside-item"><a href="/stockist">Stockist</a></li>
+      <li class="aside-item"><a href="/brand">Brand</a></li>
+      <li class="aside-item"><a href="/denim">Denim</a></li>
+      <li class="aside-item">
+        <form action="logout" method="POST">
+          <button href="/sign-up">Logout</button>
+        </form>
+      </li>
+    </li>
+    <% } else { %>
+      <li class="aside-item"><a href="/stockist">Stockist</a></li>
+      <li class="aside-item"><a href="/brand">Brand</a></li>
+      <li class="aside-item"><a href="/denim">Denim</a></li>
+      <li class="aside-item"><a href="/sign-up">Signup</a></li>
+      <li class="aside-item"><a href="/login">Login</a></li>
+    <% } %>
+  </ul>
+</div>

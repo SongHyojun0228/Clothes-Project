@@ -60,11 +60,17 @@ router.post("/sign-up", async function (req, res) {
 
   const hashedPassword = await bcrypt.hash(enteredPassword, 12);
 
+  const currentDate = new Date();
+  const formattedDate = `${currentDate.getFullYear()}.${
+    currentDate.getMonth() + 1
+  }.${currentDate.getDate()}`;
+
   const newUser = {
     email: enteredEmail,
     password: hashedPassword,
     name: enteredName,
     nickname: enteredNickName,
+    date: formattedDate,
   };
 
   const result = await db.getDb().collection("users").insertOne(newUser);
@@ -112,26 +118,26 @@ router.post("/login", async function (req, res) {
   }
 
   req.session.user = {
-    id : existingUser._id,
-    email : existingUser.email.toString(),
-    nickname : existingUser.nickname.toString(),
+    id: existingUser._id,
+    email: existingUser.email.toString(),
+    nickname: existingUser.nickname.toString(),
   };
 
   req.session.isAuthenticated = true;
 
-  req.session.save(error => {
-    if(error) {
-        console.log("세션 저장 오류 : ", error);
+  req.session.save((error) => {
+    if (error) {
+      console.log("세션 저장 오류 : ", error);
     }
     console.log("로그인 성공");
     res.redirect("/");
-  })
+  });
 });
 
-router.post("/logout", function(req,res) {
-    req.session.destroy(() => {
-        res.redirect('/');
-    });
+router.post("/logout", function (req, res) {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
 });
 
 module.exports = router;

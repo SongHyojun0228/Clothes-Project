@@ -17,6 +17,7 @@ app.use(
     secret: "super-secret",
     resave: false,
     saveUninitialized: false,
+    isAuthenticated : false,
     store: sessionStore,
     cookie: {
       maxAge: 2 * 60 * 60 * 1000,
@@ -27,6 +28,13 @@ app.use(
 
 app.use((req, res, next) => {
   res.locals.session = req.session;
+  let isAuth = req.session.isAuthenticated;
+  res.locals.isAuth = isAuth;
+
+  if (!isAuth) {
+    return next();
+  }
+
   next();
 });
 
@@ -35,6 +43,7 @@ const defaultRouter = require("./routes/route");
 const userRouter = require("./routes/user");
 const addRouter = require("./routes/add");
 const wishRouter = require("./routes/wish");
+const cafeRouter = require("./routes/cafe");
 
 app.set("view engine", "ejs");
 
@@ -47,6 +56,7 @@ app.use("/", defaultRouter);
 app.use("/", userRouter);
 app.use("/", addRouter);
 app.use("/", wishRouter);
+app.use("/", cafeRouter);
 
 app.use((req, res) => {
   res.status(404).render("404");

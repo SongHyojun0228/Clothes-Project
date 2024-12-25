@@ -1,0 +1,6 @@
+1. 폰트
+- font-family: "Noto Sans KR";
+- font-family: 'Pretendard-Regular';
+
+2. 카페(블로그, 게시물 등)
+- 네이버 카페

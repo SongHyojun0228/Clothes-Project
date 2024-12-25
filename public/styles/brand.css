@@ -46,7 +46,6 @@ h2 {
     border:none;
     box-sizing: border-box;
     border-radius: inherit;
-    padding-bottom: 0.2rem;
 }
 
 .grid-item img {
@@ -75,5 +74,6 @@ h2 {
 }
 
 .link-text {
-    margin: 0.5rem 0;
+    display: block;
+    margin: 0.8rem 0;
 }

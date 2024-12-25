@@ -83,6 +83,18 @@ input::placeholder {
     color: rgb(234, 207, 31);
 }
 
+input:-webkit-autofill {
+    background-color: rgb(27, 32, 40) !important;
+    color: rgb(234, 207, 31) !important;
+    -webkit-box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important;
+    box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important;
+  }
+  
+  input:-webkit-autofill::first-line {
+    color: rgb(234, 207, 31) !important;
+  }
+  
+
 #btn-container {
     display: flex;
     margin: auto;
