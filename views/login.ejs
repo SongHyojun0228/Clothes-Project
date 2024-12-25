@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('includes/head') %>
+    <link rel="stylesheet" href="/styles/login.css" />
+  </head>
+  <body>
+    <%-include('includes/header') %>
+    <main>
+      <h2>로그인</h2>
+      <div id="form-container">
+        <div id="yellow-line">
+          <form action="/login" method="POST">
+            <div class="form-item">
+              <label for="email"></label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="이메일(아이디)"
+              />
+              <p class="caution"><%= error.emailMessage%></p>
+            </div>
+
+            <div class="form-item">
+              <label for="password"></label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="비밀번호"
+              />
+              <p class="caution"><%= error.passwordMessage %></p>
+            </div>
+
+            <div id="btn-container">
+                <button>로그인</button>
+            </div>
+
+            <div id="other-page">
+                <a href="">아이디 찾기</a>
+                <span> | </span>
+                <a href="">비밀번호 찾기</a>
+                <span> | </span>
+                <a href="/sign-up">회원가입</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <%-include('includes/footer') %>
+  </body>
+</html>

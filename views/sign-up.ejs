@@ -19,7 +19,7 @@
                 id="email"
                 placeholder="이메일(아이디)"
               />
-              <p class="caution">경고문</p>
+              <p class="caution"><%= error.emailMessage%></p>
             </div>
 
             <div class="form-item">
@@ -30,7 +30,7 @@
                 id="password"
                 placeholder="비밀번호"
               />
-              <p class="caution">경고문</p>
+              <p class="caution"><%= error.passwordMessage %></p>
             </div>
 
             <div class="form-item">
@@ -41,7 +41,7 @@
                 id="confirmpassword"
                 placeholder="비밀번호 재확인"
               />
-              <p class="caution">경고문</p>
+              <p class="caution"><%= error.confirmpasswordMessage %></p>
             </div>
 
             <div class="form-item">
@@ -51,7 +51,7 @@
                 name="name"
                 placeholder="이름"
               />
-              <p class="caution">경고문</p>
+              <p class="caution"><%= error.nameMessage %></p>
             </div>
 
             <div class="form-item">
@@ -62,13 +62,21 @@
                 id="nickname"
                 placeholder="닉네임"
               />
-              <p class="caution">경고문</p>
+              <p class="caution"><%= error.nicknameMessage %></p>
             </div>
 
             <div id="btn-container">
               <a href="/index" id="cancelbutton">취소</a>
               <button>회원가입</button>
             </div>
+
+            <div id="other-page">
+              <a href="/login">로그인</a>
+              <span> | </span>
+              <a href="">비밀번호 찾기</a>
+              <span> | </span>
+              <a href="">아이디 찾기</a>
+          </div>
           </form>
         </div>
       </div>

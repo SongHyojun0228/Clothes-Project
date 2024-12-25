@@ -3,8 +3,14 @@ h2 {
 }
 
 #form-container {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
     padding-block: 2rem;
     width: 50rem;
+    height: 50rem;
     border-radius: 10px;
     margin: auto;
 
@@ -12,10 +18,24 @@ h2 {
 }
 
 #yellow-line {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
     margin: auto;
     width: 46rem;
+    height: 46rem;
     border: 3px dashed rgb(234, 207, 31);
+    border-style: dashed double;
     border-radius: 10px;
+}
+
+form {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
 }
 
 .form-item {
@@ -77,8 +97,9 @@ button, #cancelbutton {
     padding: 0.5rem 0.8rem;
     margin: 2rem 0.5rem;
     border: 2px dotted rgb(234, 207, 31);
+    border-style: double;
     border-radius: 4px;
-    background-color: rgb(139, 81, 64);
+    background-color: rgb(156,59,64);
     color: rgb(234, 207, 31);
 }
 
@@ -87,5 +108,20 @@ button:hover,
     background-color: rgb(156,59,64);
     border: 2px dotted rgb(156,59,64);
     font-weight: bold;
+    color: rgb(224, 218, 207);
+}
+
+#other-page a {
+    text-decoration: none;
+    color: rgb(234, 207, 31);
+    font-size: 1rem;
+}
+
+#other-page a:hover {
+    color: rgb(156,59,64);
+    font-weight: bold;
+}
+
+#other-page span {
     color: rgb(224, 218, 207);
 }
