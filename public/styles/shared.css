@@ -10,9 +10,8 @@
 3.	Dark Khaki: RGB(189, 183, 107)
 4.	Sand: RGB(237, 201, 175) */
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -23,7 +22,7 @@
 
 body {
   font-family: "Noto Sans KR";
-  font-family: "Pretendard-Regular";
+  font-family: "Pretendard";
   /* font-family: "무신사"; */
   margin: 0;
   padding: 0;

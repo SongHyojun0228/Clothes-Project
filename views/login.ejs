@@ -7,7 +7,9 @@
   <body>
     <%-include('includes/header') %>
     <main>
-      <h2>로그인</h2>
+      <div id="banner">
+        <h2>Login</h2>
+      </div>
       <div id="form-container">
         <div id="yellow-line">
           <form action="/login" method="POST">
@@ -34,15 +36,15 @@
             </div>
 
             <div id="btn-container">
-                <button>로그인</button>
+              <button>로그인</button>
             </div>
 
             <div id="other-page">
-                <a href="">아이디 찾기</a>
-                <span> | </span>
-                <a href="">비밀번호 찾기</a>
-                <span> | </span>
-                <a href="/sign-up">회원가입</a>
+              <a href="">아이디 찾기</a>
+              <span> | </span>
+              <a href="">비밀번호 찾기</a>
+              <span> | </span>
+              <a href="/sign-up">회원가입</a>
             </div>
           </form>
         </div>

@@ -19,5 +19,15 @@ h1 {
     text-align: center;
     font-size: 1.2rem;
     color:rgb(27,32,40)
+}
 
+#main-img {
+    width: 50rem;
+    margin: auto;
+}
+
+.carousel-item img {
+    width: 50rem;
+    height: 60rem;
+    object-fit: cover;
 }

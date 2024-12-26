@@ -94,36 +94,12 @@ input:focus,
   font-size: 1rem;
 }
 
-/* #container #text-container #hashtag-section input {
-  margin: auto;
-  font-size: 1rem;
-  display: block;
-  padding-top: 0.5rem;
-  width: 55rem;
-
-  color: rgb(27, 32, 40);
-  border: none;
-  border-top: 1px solid rgb(224, 218, 207);
+#container #text-container input {
+    border-top: 1px solid rgb(224, 218, 207);
+    padding-top: 1rem;
+    width: 56rem;
+    font-size: 1rem;
 }
-
-.hashtag {
-  display: inline-flex;
-  padding: 0.3rem;
-  margin-inline: 0.3rem;
-  font-size: 1rem;
-  font-weight: bold;
-
-  background-color: rgb(224, 218, 207);
-  border-radius: 8px;
-  color: rgb(27, 32, 40);
-}
-
-.hashtag .remove {
-  margin-left: 0.5rem;
-  cursor: pointer;
-  font-weight: bold;
-  color: #888;
-} */
 
 #container button {
   margin-top: 2rem;
@@ -141,22 +117,3 @@ input:focus,
   border: 1px dashed rgb(234, 207, 31);
   color: rgb(234, 207, 31);
 }
-
-/* #container #text-container #toolbar {
-  border: none;
-  border-bottom: 1px solid rgb(224, 218, 207);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
-}
-
-#container #text-container #editor-container {
-  border: none;
-  height: 25rem;
-  padding: 2rem 1rem;
-}
-
-.ql-editor {
-  font-family: "Pretendard-Regular";
-  font-size: 1rem;
-  line-height: 1.5;
-  padding: 2rem 1rem;
-} */

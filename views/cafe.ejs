@@ -36,6 +36,36 @@
 
         <div id="right-container">
           <p id="posts">전체글보기</p>
+
+          <div id="post-container">
+            <% for (const post of posts) { %>
+            <div class="post-card">
+              <% if (post.previewImage) { %>
+              <img
+                src="<%= post.previewImage %>"
+                alt="미리보기 이미지"
+                class="post-thumbnail"
+              />
+              <% } else { %>
+              <img
+                src="/images/default-thumbnail.jpg"
+                alt="기본 이미지"
+                class="post-thumbnail"
+              />
+              <% } %>
+              <div class="content-container">
+                <div class="title-container">
+                    <p class="post-title"><%= post.title %></p>
+                    <% if (post.isNew) { %>
+                        <span class="new-badge">N</span>
+                    <% } %>
+                </div>
+                <p class="post-author"><%= post.author %></p>
+                <p class="post-date"><%= post.date %></p>
+              </div>
+            </div>
+            <% } %>
+          </div>
         </div>
       </div>
     </main>

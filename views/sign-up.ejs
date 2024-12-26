@@ -30,6 +30,9 @@
                 id="password"
                 placeholder="비밀번호"
               />
+              <p id="caution">
+                (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)
+              </p>
               <p class="caution"><%= error.passwordMessage %></p>
             </div>
 
@@ -46,11 +49,7 @@
 
             <div class="form-item">
               <label for="name"></label>
-              <input
-                type="text"
-                name="name"
-                placeholder="이름"
-              />
+              <input type="text" name="name" placeholder="이름" />
               <p class="caution"><%= error.nameMessage %></p>
             </div>
 
@@ -76,7 +75,7 @@
               <a href="">비밀번호 찾기</a>
               <span> | </span>
               <a href="">아이디 찾기</a>
-          </div>
+            </div>
           </form>
         </div>
       </div>

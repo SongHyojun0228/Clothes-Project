@@ -31,6 +31,12 @@ router.post("/sign-up", async function (req, res) {
 
   if (!enteredPassword) {
     error.passwordMessage = "비밀번호를 입력하세요.";
+  } else {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*[0-9!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/;
+    if (!passwordRegex.test(enteredPassword)) {
+      error.passwordMessage =
+        "비밀번호는 영어, 숫자, 특수기호 중 2가지 이상을 포함하고 8-16자 사이여야 합니다.";
+    }
   }
 
   if (enteredPassword != enteredConfirmPassword) {

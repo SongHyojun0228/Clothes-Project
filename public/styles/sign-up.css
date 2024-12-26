@@ -55,10 +55,21 @@ label {
     padding-left: 0.3rem;
 }
 
-.caution {
+#caution {
     font-size: 1rem;
     font-weight: bold;
     padding-left: 0.3rem;
+    margin:0;
+    margin-top: 0.3rem;
+    color: rgb(234, 207, 31);
+}
+
+.caution {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 0.3rem;
+    margin:0;
     margin-top: 0.3rem;
     color: rgb(156,59,64);
     /* color: rgb(234, 207, 31); */
@@ -81,6 +92,7 @@ input:focus {
 
 input::placeholder {
     color: rgb(234, 207, 31);
+    font-size: 1rem;
 }
 
 input:-webkit-autofill {
@@ -101,26 +113,30 @@ input:-webkit-autofill {
     justify-content: center;
 }
 
-button, #cancelbutton {
-    display: block;
-    text-decoration: none;
-    width: 7rem;
-    font-size: 1.2rem;
-    padding: 0.5rem 0.8rem;
-    margin: 2rem 0.5rem;
-    border: 2px dotted rgb(234, 207, 31);
-    border-style: double;
-    border-radius: 4px;
-    background-color: rgb(156,59,64);
-    color: rgb(234, 207, 31);
+button,
+#cancelbutton {
+  display: block;
+  text-decoration: none;
+  width: 7rem;
+
+  font-size: 1.2rem;
+  font-weight: 800;
+
+  padding: 0.5rem 0.8rem;
+  margin: 2rem 0.5rem;
+
+  color: rgb(27, 32, 40);
+  border: 2px dotted rgb(27, 32, 40);
+  border-radius: 4px;
+  background-color: rgb(224, 218, 207);
 }
 
 button:hover,
 #cancelbutton:hover {
-    background-color: rgb(156,59,64);
-    border: 2px dotted rgb(156,59,64);
-    font-weight: bold;
-    color: rgb(224, 218, 207);
+  font-weight: bold;
+  color: rgb(224, 218, 207);
+  background-color: rgb(156, 59, 64);
+  border: 2px dotted rgb(224, 218, 207);
 }
 
 #other-page a {

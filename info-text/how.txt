@@ -1,6 +1,7 @@
 1. 폰트
 - font-family: "Noto Sans KR";
 - font-family: 'Pretendard-Regular';
+- 무신사 폰트 
 
 2. 카페(블로그, 게시물 등)
-- 네이버 카페
+- 네이버 카페 (핏더사이즈)
