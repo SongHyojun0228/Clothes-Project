@@ -1,0 +1,162 @@
+#banner {
+  width: 100%;
+  height: 12rem;
+  overflow: hidden;
+  background-image: url("/images/배너사진.png");
+  background-size: cover;
+  background-position: 20% 35%;
+  margin-bottom: 2rem;
+}
+
+#banner h2 {
+  color: rgb(224, 218, 207);
+  /* color: rgb(27,32,40); */
+  /* color: rgb(156,59,64); */
+  font-size: 8rem;
+  font-weight: bold;
+
+  text-shadow: 2px 2px 0px rgb(27, 32, 40), -2px -2px 0px rgb(27, 32, 40),
+    -2px 2px 0px rgb(27, 32, 40), 2px -2px 0px rgb(27, 32, 40);
+}
+
+#container {
+  width: 60rem;
+  margin: 0 auto;
+}
+
+#container #title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 0.3rem;
+  color: rgb(27, 32, 40);
+  border-bottom: 3px solid rgb(27, 32, 40);
+}
+
+#container #what-post {
+  width: 60rem;
+  border: 1px solid rgb(224, 218, 207);
+  border-radius: 8px;
+  padding-block: 1.5rem;
+  margin-top: 2rem;
+}
+
+#container #what-post select {
+  width: 20rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid rgb(224, 218, 207);
+}
+
+#container #what-post select:focus,
+input:focus,
+#container #text-container textarea:focus {
+  outline: none;
+}
+
+#container #what-post option:focus {
+  background-color: rgb(224, 218, 207);
+}
+
+#container #what-post input {
+  margin: auto;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.7rem 1.2rem;
+  width: 55rem;
+
+  color: rgb(27, 32, 40);
+  border: 1px solid rgb(224, 218, 207);
+  border-radius: 8px;
+  background-color: rgb(224, 218, 207);
+}
+
+#container #what-post input::placeholder {
+  color: rgb(27, 32, 40, 0.5);
+}
+
+#container #text-container {
+  width: 60rem;
+  padding: 2rem;
+  margin-top: 1rem;
+
+  border: 1px solid rgb(224, 218, 207);
+  border-radius: 8px;
+}
+
+#container #text-container textarea {
+  resize: none;
+  width: 56rem;
+  height: 25rem;
+  border: none;
+  font-size: 1rem;
+}
+
+/* #container #text-container #hashtag-section input {
+  margin: auto;
+  font-size: 1rem;
+  display: block;
+  padding-top: 0.5rem;
+  width: 55rem;
+
+  color: rgb(27, 32, 40);
+  border: none;
+  border-top: 1px solid rgb(224, 218, 207);
+}
+
+.hashtag {
+  display: inline-flex;
+  padding: 0.3rem;
+  margin-inline: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+
+  background-color: rgb(224, 218, 207);
+  border-radius: 8px;
+  color: rgb(27, 32, 40);
+}
+
+.hashtag .remove {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: #888;
+} */
+
+#container button {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  padding: 0.3rem 1rem;
+
+  background-color: rgb(224, 218, 207);
+  border: 1px solid rgb(224, 218, 207);
+  border-radius: 8px;
+}
+
+#container button:hover {
+  font-weight: bold;
+  background-color: rgb(27, 32, 40);
+  border: 1px dashed rgb(234, 207, 31);
+  color: rgb(234, 207, 31);
+}
+
+/* #container #text-container #toolbar {
+  border: none;
+  border-bottom: 1px solid rgb(224, 218, 207);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
+}
+
+#container #text-container #editor-container {
+  border: none;
+  height: 25rem;
+  padding: 2rem 1rem;
+}
+
+.ql-editor {
+  font-family: "Pretendard-Regular";
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 2rem 1rem;
+} */

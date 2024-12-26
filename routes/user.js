@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const bcrypt = require("bcrypt");
 const db = require("../data/database");
 
@@ -76,7 +75,7 @@ router.post("/sign-up", async function (req, res) {
   const result = await db.getDb().collection("users").insertOne(newUser);
   console.log(result);
 
-  res.redirect("/");
+  res.redirect("login");
 });
 
 router.get("/login", function (req, res) {
@@ -136,7 +135,9 @@ router.post("/login", async function (req, res) {
 
 router.post("/logout", function (req, res) {
   req.session.destroy(() => {
-    res.redirect("/");
+    res.send(
+      `<script>alert("로그아웃 되었습니다"); window.location.href="/";</script>`
+    );
   });
 });
 

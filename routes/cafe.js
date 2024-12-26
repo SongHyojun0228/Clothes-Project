@@ -19,4 +19,21 @@ router.get("/cafe", async function (req, res) {
   res.render('cafe', {user:user});
 });
 
+router.get('/upload-post', function(req, res) {
+  res.render('upload-post');
+})
+
+router.post('/upload-post', async function(req, res) {
+  const newPost = {
+    post_kind : req.body.post_kind,
+    title : req.body.title,
+    content : req.body.content,
+    author : req.session.user.nickname
+  };
+
+  await db.getDb().collection('posts').insertOne(newPost);
+  console.log(newPost)
+  res.redirect('cafe');
+});
+
 module.exports = router;

@@ -2,41 +2,41 @@
 <html lang="en">
   <head>
     <%-include('includes/head')%>
-    <link rel="stylesheet" href="/styles/cafe.css">
+    <link rel="stylesheet" href="/styles/cafe.css" />
     <title>Cafe</title>
   </head>
   <body>
     <%-include('includes/header')%>
     <main>
-        <div id="banner">
+      <div id="banner">
         <h2>Cafe</h2>
       </div>
 
       <div id="container">
-          <div id="left-container">
-            <p id="nickname"><%= user.nickname%></p>
-            <p id="date"><%= user.date%> 가입</p>
-            <a id="upload-post-btn" href="/upload-post">카페 글쓰기</a>
+        <div id="left-container">
+          <p id="nickname"><%= user.nickname%></p>
+          <p id="date"><%= user.date%> 가입</p>
+          <a id="upload-post-btn" href="/upload-post">카페 글쓰기</a>
 
-            <p id="posts">👖게시판👖</p>
+          <p id="posts">👖게시판👖</p>
 
-            <p id="fashion">fashion</p>
-            <a href="" class="post-items">↘️ 오뭐신</a>
-            <a href="" class="post-items">↘️ 오늘의 룩</a>
-            <a href="" class="post-items">↘️ 골라줘</a>
-            <a href="" class="post-items">↘️ 발매정보</a>
-            <a href="" class="post-items">↘️ 세일 정보</a>
+          <p id="fashion">fashion</p>
+          <a href="" class="post-items">↘️ 오뭐신</a>
+          <a href="" class="post-items">↘️ 오늘의 룩</a>
+          <a href="" class="post-items">↘️ 골라줘</a>
+          <a href="" class="post-items">↘️ 발매정보</a>
+          <a href="" class="post-items">↘️ 세일 정보</a>
 
-            <p id="lifestyle">lifestyle</p>
-            <a href="" class="post-items">↘️ 밥밥</a>
-            <a href="" class="post-items">↘️ 유머</a>
-            <a href="" class="post-items">↘️ 일상</a>
-            <a href="" class="post-items">↘️ 운동</a>
-          </div>
-    
-          <div id="right-container">
-            <p id="posts">전체글보기</p>
-          </div>
+          <p id="lifestyle">lifestyle</p>
+          <a href="" class="post-items">↘️ 밥밥</a>
+          <a href="" class="post-items">↘️ 유머</a>
+          <a href="" class="post-items">↘️ 일상</a>
+          <a href="" class="post-items">↘️ 운동</a>
+        </div>
+
+        <div id="right-container">
+          <p id="posts">전체글보기</p>
+        </div>
       </div>
     </main>
     <%-include('includes/footer')%>
