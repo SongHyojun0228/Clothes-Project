@@ -1,18 +1,17 @@
-h2 {
-    text-align: center;
-    font-weight: bold;
-    margin: 4rem auto;
-}
-
 #content-container {
-    margin: 2rem auto;
-    width: 30rem;
+    background-color: rgb(224, 218, 207);
+    padding: 2rem;
 }
 
 #content {
     font-size: 1.2rem;
     text-align: center;
+    font-weight: 800;
     color: rgb(27,32,40);
+}
+
+#content span {
+    color: rgb(156,59,64);
 }
 
 #grid-container {

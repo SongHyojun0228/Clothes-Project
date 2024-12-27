@@ -3,6 +3,7 @@ const multer = require("multer");
 const path = require("path");
 const router = express.Router();
 const db = require("../data/database");
+const { ObjectId } = require("mongodb");
 
 const guardRoute = require("../middlewares/auth-protection-middleware");
 
@@ -69,7 +70,7 @@ router.post(
   upload.array("images", 10),
   async function (req, res) {
     try {
-      const imagePaths = req.files.map((file) => file.path);
+      const imagePaths = req.files.map((file) => `/uploads/${file.filename}`);
 
       const currentDate = new Date();
       const formattedDate = `${currentDate.getFullYear()}.${String(
@@ -100,5 +101,23 @@ router.post(
     }
   }
 );
+
+router.get('/cafe/:id', async function(req, res) {
+  const sessionUser = req.session.user;
+  const postId = req.params.id;
+  const PostId = new ObjectId(postId);
+
+  const user = await db
+    .getDb()
+    .collection("users")
+    .findOne({ nickname: sessionUser.nickname });
+
+  const post = await db
+    .getDb()
+    .collection('posts')
+    .findOne({_id: PostId});
+
+  res.render('post-detail', {user:user, post:post});
+});
 
 module.exports = router;

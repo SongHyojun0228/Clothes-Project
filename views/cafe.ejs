@@ -22,12 +22,13 @@
 
           <p id="fashion">fashion</p>
           <a href="" class="post-items">↘️ 오뭐신</a>
-          <a href="" class="post-items">↘️ 오늘의 룩</a>
+          <a href="" class="post-items">↘️ 오늘의룩</a>
           <a href="" class="post-items">↘️ 골라줘</a>
           <a href="" class="post-items">↘️ 발매정보</a>
           <a href="" class="post-items">↘️ 세일 정보</a>
 
           <p id="lifestyle">lifestyle</p>
+          <a href="" class="post-items">↘️ 자유</a>
           <a href="" class="post-items">↘️ 밥밥</a>
           <a href="" class="post-items">↘️ 유머</a>
           <a href="" class="post-items">↘️ 일상</a>
@@ -40,25 +41,29 @@
           <div id="post-container">
             <% for (const post of posts) { %>
             <div class="post-card">
+              <a href="/cafe/<%= post._id%>">
               <% if (post.previewImage) { %>
-              <img
-                src="<%= post.previewImage %>"
-                alt="미리보기 이미지"
-                class="post-thumbnail"
-              />
-              <% } else { %>
-              <img
-                src="/images/default-thumbnail.jpg"
-                alt="기본 이미지"
-                class="post-thumbnail"
-              />
-              <% } %>
+                <img
+                  src="<%= post.previewImage %>"
+                  alt="미리보기 이미지"
+                  class="post-thumbnail"
+                />
+                <% } else { %>
+                <img
+                  src="/images/default-thumbnail.jpg"
+                  alt="기본 이미지"
+                  class="post-thumbnail"
+                />
+                <% } %>
+              </a>
               <div class="content-container">
                 <div class="title-container">
-                    <p class="post-title"><%= post.title %></p>
-                    <% if (post.isNew) { %>
-                        <span class="new-badge">N</span>
-                    <% } %>
+                  <a href="/cafe/<%= post._id%>" class="post-title"
+                    ><%= post.title %></a
+                  >
+                  <% if (post.isNew) { %>
+                  <span class="new-badge">N</span>
+                  <% } %>
                 </div>
                 <p class="post-author"><%= post.author %></p>
                 <p class="post-date"><%= post.date %></p>

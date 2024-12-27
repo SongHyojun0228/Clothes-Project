@@ -1,9 +1,11 @@
-h2 {
-    margin: 4rem auto;
-    font-weight: bold;
+#content-container {
+    background-color: rgb(224, 218, 207);
+    padding: 2rem;
 }
 
 #content {
+    margin: 0;
     text-align: center;
     font-size: 1.2rem;
+    font-weight: 800;
 }
