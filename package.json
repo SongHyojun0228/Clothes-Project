@@ -4,7 +4,7 @@
   "description": "산업체 포트폴리오 준비",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",

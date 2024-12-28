@@ -38,6 +38,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(express.json());
+
 const path = require("path");
 const defaultRouter = require("./routes/route");
 const userRouter = require("./routes/user");

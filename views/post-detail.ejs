@@ -3,18 +3,19 @@
   <head>
     <%- include('includes/head')%>
     <link rel="stylesheet" href="/styles/post-detail.css" />
+    <script src="/scripts/cafe.js" defer></script>
     <title>Post Detail</title>
   </head>
   <body>
     <%- include('includes/header')%>
     <main>
-      <div id="banner">
-        <h2>Cafe</h2>
-      </div>
+        <div id="banner">
+            <a href="/cafe"><h2>Cafe</h2></a>
+        </div>
 
       <div id="container">
         <div id="left-container">
-          <p id="nickname"><%= user.nickname%></p>
+          <a href="/my-page" id="nickname"><%= user.nickname%></a>
           <p id="date"><%= user.date%> 가입</p>
           <a id="upload-post-btn" href="/upload-post">카페 글쓰기</a>
 
@@ -46,16 +47,39 @@
           <div id="content-container">
             <p id="content"><%= post.content%></p>
             <div id="img-container">
-                <% if (post.images && post.images.length > 0) { %>
+              <% if (post.images && post.images.length > 0) { %> 
                 <% post.images.forEach(function(imagePath) { %>
-                <img
-                  src="<%= imagePath %>"
-                  alt="게시물 이미지"
-                  class="post-image"
-                />
-                <% }) %>
-                <% } %>
+                    <img
+                        src="<%= imagePath %>"
+                        alt="게시물 이미지"
+                        class="post-image"
+                    />
+                <% }) %> 
+              <% } %>
             </div>
+            <a id="see-more" href=""
+              ><span><%=post.author%></span>님의 게시글 더보기 ></a
+            >
+          </div>
+
+          <div id="comment-container">
+            <ul id="comment-list">
+                <% for(const comment of comments) { %>
+                    <li class="comment-item">
+                        <p class="user-info"><%= comment.author %></p>
+                        <p class="comment"><%= comment.comment %></p>
+                        <p class="date"><%= comment.date %></p>
+                      </li>
+                <% } %>
+              </ul>
+
+              <form action="/cafe/<%= post._id%>/comment" method="POST" id="form-comment" data-post-id="<%= post._id %>" >
+                <div id="comment-input-container">
+                    <p for="comment"><%= user.nickname %></p>
+                    <input type="text" id="comment" name="comment" placeholder="댓글을 남겨보세요."></input>
+                    <button>등록</button>
+                </div>
+            </form>            
           </div>
         </div>
       </div>

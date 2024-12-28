@@ -1,7 +1,7 @@
 #container {
   width: 60rem;
   margin: 0 auto;
-  margin-top: 2rem; 
+  margin-top: 2rem;
 }
 
 #container #title {
@@ -75,10 +75,10 @@ input:focus,
 }
 
 #container #text-container input {
-    border-top: 1px solid rgb(224, 218, 207);
-    padding-top: 1rem;
-    width: 56rem;
-    font-size: 1rem;
+  border-top: 1px solid rgb(224, 218, 207);
+  padding-top: 1rem;
+  width: 56rem;
+  font-size: 1rem;
 }
 
 #container button {
@@ -96,4 +96,31 @@ input:focus,
   background-color: rgb(27, 32, 40);
   border: 1px dashed rgb(234, 207, 31);
   color: rgb(234, 207, 31);
+}
+
+@media (max-width: 60rem) {
+  #container {
+    width: 30rem;
+  }
+
+  #container #what-post {
+    width: 30rem;
+  }
+  
+  #container #what-post select {
+    width: 20rem;
+  }
+
+  #container #what-post input {
+    width: 20rem;
+  }
+
+  #container #text-container {
+    width: 30rem;
+  }
+
+  #container #text-container textarea,
+  #container #text-container input {
+    width: 26rem;
+  }
 }

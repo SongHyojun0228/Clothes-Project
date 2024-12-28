@@ -76,6 +76,7 @@ router.post("/sign-up", async function (req, res) {
     name: enteredName,
     nickname: enteredNickName,
     date: formattedDate,
+    visited: 0
   };
 
   const result = await db.getDb().collection("users").insertOne(newUser);

@@ -14,6 +14,8 @@
 }
 
 #left-container #nickname {
+  text-decoration: none;
+  display: block;
   font-size: 1rem;
   font-weight: 900;
   margin: 0;
@@ -21,6 +23,10 @@
   color: rgb(27, 32, 40);
 }
 
+#left-container #nickname:hover {
+  text-decoration: underline;
+  color: rgb(156, 59, 64);
+}
 #left-container #date {
   margin: 0;
   color: rgb(27, 32, 40, 0.5);
@@ -168,8 +174,9 @@
 }
 
 #right-container .post-card .post-title:hover {
-    color: rgb(156, 59, 64);
-    font-weight: 900;
+  color: rgb(156, 59, 64);
+  text-decoration: underline;
+  font-weight: 900;
 }
 
 #right-container .post-card span {
@@ -192,4 +199,23 @@
   margin-top: 0.1rem;
   font-size: 0.7rem;
   color: rgb(27, 32, 40, 0.5);
+}
+
+@media (max-width: 60rem) {
+  #container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  #left-container,
+  #right-container {
+    width: 30rem;
+    margin: auto;
+    border-bottom: none;
+  }
+
+  #right-container #post-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
 }

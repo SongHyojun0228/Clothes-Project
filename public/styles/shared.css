@@ -251,6 +251,12 @@ header.blurred {
   align-items: center;
 }
 
+#banner a {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+}
+
 #banner h2 {
     margin: auto;
   color: rgb(224, 218, 207);
@@ -262,7 +268,6 @@ header.blurred {
   text-shadow: 1px 1px 0px rgb(27, 32, 40), -1px -1px 0px rgb(27, 32, 40),
     -1px 1px 0px rgb(27, 32, 40), 1px -1px 0px rgb(27, 32, 40);
 }
-
 
 
 

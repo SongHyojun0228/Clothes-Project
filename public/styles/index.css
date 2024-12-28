@@ -22,8 +22,9 @@ h1 {
 }
 
 #main-img {
-    width: 50rem;
+    width: 80%;
     margin: auto;
+    margin-top: 4rem;
 }
 
 .carousel-item img {

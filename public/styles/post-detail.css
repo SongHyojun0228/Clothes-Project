@@ -14,11 +14,18 @@
 }
 
 #left-container #nickname {
+  text-decoration: none;
+  display: block;
   font-size: 1rem;
   font-weight: 900;
   margin: 0;
 
   color: rgb(27, 32, 40);
+}
+
+#left-container #nickname:hover {
+  text-decoration: underline;
+  color: rgb(156, 59, 64);
 }
 
 #left-container #date {
@@ -118,61 +125,198 @@
 }
 
 #right-container #post-info {
-    text-align: left;
-    padding-left: 0.5rem;
-    padding-bottom: 1rem;
-    color: rgb(27, 32, 40);
-    margin: 0;
-    border-bottom: 1px solid rgb(224, 218, 207);
+  text-align: left;
+  padding-bottom: 1rem;
+  color: rgb(27, 32, 40);
+  margin: 0;
+  border-bottom: 1px solid rgb(224, 218, 207);
 }
 
 #right-container #post-kind {
-    display: block;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+  display: block;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
 
-    color: rgb(156, 59, 64);
+  color: rgb(156, 59, 64);
 }
 
 #right-container #title {
-    font-size: 1.5rem;
-    margin: 0;
-} 
+  font-size: 1.5rem;
+  margin: 0;
+}
 
 #right-container #user-nickname {
-    margin: 0;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    font-weight: 900;
+  margin: 0;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 900;
 }
 
 #right-container #post-date {
-    font-size: 0.7rem;
-    font-weight: 500;
-    margin: 0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin: 0;
 
-    color: rgb(27, 32, 40, 0.5);
+  color: rgb(27, 32, 40, 0.5);
 }
 
 #right-container #content-container {
-    margin-top: 1rem;
-    padding-left: 0.5rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgb(224, 218, 207);
 }
 
 #right-container #content-container #content {
-    text-align: left;
-    font-size: 1rem;
-    white-space: pre-wrap;
-    margin: 0;
+  text-align: left;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  margin: 0;
 }
 
 #right-container #content-container #img-container {
-    width: 44rem;
+  width: 44rem;
 }
 
 #right-container #content-container img {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+#container #content-container #see-more {
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-block: 2rem;
+  color: rgb(27, 32, 40);
+}
+
+#container #content-container #see-more span {
+  font-weight: 900;
+}
+
+#container #comment-container {
+  width: 44rem;
+}
+
+#container #comment-list {
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+#container #comment-list .comment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-top: 1rem;
+
+  border-bottom: 1px solid rgb(224, 218, 207);
+}
+
+#container #comment-list .comment-item .user-info {
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 0;
+
+  color: rgb(27, 32, 40);
+}
+
+#container #comment-list .comment-item .comment {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+
+  color: rgb(27, 32, 40);
+}
+
+#container #comment-list .comment-item .date {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgb(27, 32, 40, 0.5);
+}
+
+#container #comment-container #comment-input-container {
+  align-items: baseline;
+  padding: 1.5rem;
+  margin-top: 1rem;
+
+  border: 1px solid rgb(224, 218, 207);
+  border-radius: 8px;
+}
+
+#container #comment-container #comment-input-container p {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+#container #comment-container #comment-input-container input {
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  width: 41rem;
+
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 0;
+}
+
+#container #comment-container #comment-input-container input::placeholder {
+  color: rgb(27, 32, 40, 0.5);
+}
+
+#container #comment-container #comment-input-container button {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: white;
+  border: none;
+
+  margin: 0;
+  margin-top: 1rem;
+  padding: 0;
+  color: rgb(27, 32, 40, 0.5);
+}
+
+#container #comment-container #comment-input-container button:hover {
+  color: rgb(27, 32, 40);
+  font-weight: 900;
+}
+
+@media (max-width: 60rem) {
+  #container {
     width: 100%;
-    margin-top: 1rem;
+    flex-direction: column;
+  }
+
+  #left-container {
+    border-bottom: none;
+  }
+
+  #left-container,
+  #right-container {
+    width: 30rem;
+    margin: auto;
+  }
+
+  #right-container #post-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  #right-container #content-container #img-container {
+    width: 26rem;
+  }
+
+  #container #comment-container {
+    width: 26rem;
+  }
+  
+  #container #comment-container #comment-input-container input {
+    width: 23rem;
+  }
 }

@@ -41,24 +41,31 @@ router.get("/cafe", async function (req, res) {
     .collection("users")
     .findOne({ nickname: sessionUser.nickname });
 
-  const posts = await db.getDb()
-  .collection("posts")
-  .find()
-  .sort({ date: -1 })
-  .toArray();
+  await db
+    .getDb()
+    .collection("users")
+    .updateOne({ nickname: sessionUser.nickname }, { $inc: { visited: 1 } });
+
+  const posts = await db
+    .getDb()
+    .collection("posts")
+    .find()
+    .sort({ date: -1 })
+    .toArray();
 
   const currentDate = new Date();
-  const today = `${currentDate.getFullYear()}.${
-    String(currentDate.getMonth() + 1).padStart(2, "0")
-  }.${
-    String(currentDate.getDate()).padStart(2, "0")
-  }`;
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach(post => {
-    post.isNew = post.date.startsWith(today); 
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
   });
 
-  res.render("cafe", { user: user, posts: posts });
+  res.render("cafe", {
+    user: { ...user, visited: user.visited + 1 },
+    posts: posts,
+  });
 });
 
 router.get("/upload-post", function (req, res) {
@@ -90,6 +97,7 @@ router.post(
         previewImage: imagePaths[0] || null,
         author: req.session.user.nickname,
         date: formattedDate,
+        views: 0,
       };
 
       await db.getDb().collection("posts").insertOne(newPost);
@@ -102,10 +110,9 @@ router.post(
   }
 );
 
-router.get('/cafe/:id', async function(req, res) {
+router.get("/cafe/:id", async function (req, res) {
   const sessionUser = req.session.user;
   const postId = req.params.id;
-  const PostId = new ObjectId(postId);
 
   const user = await db
     .getDb()
@@ -114,10 +121,84 @@ router.get('/cafe/:id', async function(req, res) {
 
   const post = await db
     .getDb()
-    .collection('posts')
-    .findOne({_id: PostId});
+    .collection("posts")
+    .findOne({ _id: new ObjectId(postId) });
 
-  res.render('post-detail', {user:user, post:post});
+  // 조회수 증가
+  await db
+    .getDb()
+    .collection("posts")
+    .updateOne({ _id: new ObjectId(postId) }, { $inc: { views: 1 } });
+
+  const comments = await db
+    .getDb()
+    .collection("comments")
+    .find({ postId: new ObjectId(postId) })
+    .toArray();
+
+  res.render("post-detail", {
+    user: user,
+    post: { ...post, views: post.views + 1 },
+    comments: comments,
+  });
 });
 
+router.post("/cafe/:id/comment", async function (req, res) {
+  const sessionUser = req.session.user;
+  const postId = req.params.id;
+
+  const currentDate = new Date();
+  const formattedDate = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(
+    2,
+    "0"
+  )} ${String(currentDate.getHours()).padStart(2, "0")}:${String(
+    currentDate.getMinutes()
+  ).padStart(2, "0")}`;
+
+  const { comment } = req.body;
+
+  const newComment = {
+    postId: new ObjectId(postId),
+    comment: comment,
+    author: sessionUser.nickname,
+    date: formattedDate,
+  };
+
+  await db.getDb().collection("comments").insertOne(newComment);
+
+  res.status(201).json({
+    comment: newComment.comment,
+    author: newComment.author,
+    date: newComment.date,
+  });
+});
+
+router.get("/my-page", async function (req, res) {
+  const sessionUser = req.session.user;
+
+  const user = await db
+    .getDb()
+    .collection("users")
+    .findOne({ nickname: sessionUser.nickname });
+
+  const posts = await db
+    .getDb()
+    .collection("posts")
+    .find({ author: sessionUser.nickname })
+    .sort({ date: -1 })
+    .toArray();
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
+  res.render("my-page", { user: user, posts: posts });
+});
 module.exports = router;

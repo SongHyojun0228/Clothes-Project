@@ -9,12 +9,12 @@
     <%-include('includes/header')%>
     <main>
       <div id="banner">
-        <h2>Cafe</h2>
+        <a href="/cafe"><h2>Cafe</h2></a>
       </div>
 
       <div id="container">
         <div id="left-container">
-          <p id="nickname"><%= user.nickname%></p>
+          <a href="/my-page" id="nickname"><%= user.nickname%></a>
           <p id="date"><%= user.date%> 가입</p>
           <a id="upload-post-btn" href="/upload-post">카페 글쓰기</a>
 
