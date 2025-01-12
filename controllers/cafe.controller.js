@@ -2,7 +2,7 @@ const User = require("../models/user.model");
 const Post = require("../models/post.model");
 const Comment = require("../models/comment.model");
 
-const { ObjectId } = require("mongodb");  
+const { ObjectId } = require("mongodb");
 
 async function getCafe(req, res) {
   const sessionUser = req.session.user;
@@ -10,6 +10,15 @@ async function getCafe(req, res) {
   await User.incrementVisit(sessionUser.nickname);
 
   const posts = await Post.getAll();
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
 
   res.render("cafe", {
     user: { ...user, visited: user.visited + 1 },
@@ -23,6 +32,15 @@ async function getCafeShoes(req, res) {
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("오뭐신");
 
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
   res.render("cafe-shoes", { user, posts });
 }
 
@@ -31,6 +49,15 @@ async function getCafeLook(req, res) {
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("오늘의 룩");
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
 
   res.render("cafe-look", { user, posts });
 }
@@ -41,6 +68,15 @@ async function getCafeSelect(req, res) {
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("골라줘");
 
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
   res.render("cafe-select", { user, posts });
 }
 
@@ -49,6 +85,15 @@ async function getCafeDrop(req, res) {
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("발매정보");
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
 
   res.render("cafe-drop", { user, posts });
 }
@@ -59,6 +104,15 @@ async function getCafeSale(req, res) {
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("세일정보");
 
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
   res.render("cafe-sale", { user, posts });
 }
 
@@ -67,6 +121,15 @@ async function getCafeFree(req, res) {
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("자유");
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
 
   res.render("cafe-free", { user, posts });
 }
@@ -77,6 +140,15 @@ async function getCafeEat(req, res) {
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("밥밥");
 
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
   res.render("cafe-eat", { user, posts });
 }
 
@@ -85,6 +157,15 @@ async function getCafeHumor(req, res) {
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("유머");
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
 
   res.render("cafe-humor", { user, posts });
 }
@@ -95,6 +176,15 @@ async function getCafeLife(req, res) {
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("일상");
 
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
   res.render("cafe-life", { user, posts });
 }
 
@@ -103,6 +193,15 @@ async function getCafeExercise(req, res) {
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
   const posts = await Post.getByKind("운동");
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
 
   res.render("cafe-exercise", { user, posts });
 }
@@ -115,6 +214,16 @@ async function postUploadPost(req, res) {
   try {
     const imagePaths = req.files.map((file) => `/uploads/${file.filename}`);
 
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getFullYear()}.${String(
+      currentDate.getMonth() + 1
+    ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(
+      2,
+      "0"
+    )} ${String(currentDate.getHours()).padStart(2, "0")}:${String(
+      currentDate.getMinutes()
+    ).padStart(2, "0")}`;
+
     const newPost = {
       post_kind: req.body.post_kind,
       title: req.body.title,
@@ -122,13 +231,15 @@ async function postUploadPost(req, res) {
       images: imagePaths,
       previewImage: imagePaths[0] || null,
       author: req.session.user.nickname,
-      date: new Date().toISOString(),
+      date: formattedDate,
       views: 0,
     };
 
     await Post.create(newPost);
+    console.log("게시물 저장 성공:", newPost);
     res.redirect("/cafe");
   } catch (err) {
+    console.error("업로드 중 오류 발생:", err);
     res.status(500).send("게시물 업로드 실패");
   }
 }
@@ -156,7 +267,14 @@ async function postComment(req, res) {
   const postId = req.params.id;
 
   const currentDate = new Date();
-  const formattedDate = `${currentDate.getFullYear()}.${String(currentDate.getMonth() + 1).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")} ${String(currentDate.getHours()).padStart(2, "0")}:${String(currentDate.getMinutes()).padStart(2, "0")}`;
+  const formattedDate = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(
+    2,
+    "0"
+  )} ${String(currentDate.getHours()).padStart(2, "0")}:${String(
+    currentDate.getMinutes()
+  ).padStart(2, "0")}`;
 
   const { comment } = req.body;
 
@@ -180,6 +298,30 @@ async function postComment(req, res) {
   });
 }
 
+async function getMyPage(req, res) {
+  const sessionUser = req.session.user;
+  if (!sessionUser) {
+    return res.redirect("/login");
+  }
+
+  const user = await User.findByNickname(sessionUser.nickname);
+  const posts = await Post.findByAuthor(sessionUser.nickname);
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
+  res.render("my-page", { user, posts });
+}
+
+module.exports = {
+  getMyPage,
+};
 
 module.exports = {
   getCafe,
@@ -194,7 +336,8 @@ module.exports = {
   getCafeLife,
   getCafeExercise,
   getUploadPost,
-  postUploadPost,  
+  postUploadPost,
   getCafePost,
-  postComment,     
+  postComment,
+  getMyPage,
 };

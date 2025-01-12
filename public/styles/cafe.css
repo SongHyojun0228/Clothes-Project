@@ -8,8 +8,8 @@
 #left-container {
   border-block: 3px solid rgb(27, 32, 40);
   width: 12rem;
-  height: 32rem;
-  padding-block: 0.5rem;
+  height: 32.6rem;
+  padding-block: 0.8rem;
   margin-right: 1rem;
 }
 
@@ -27,6 +27,7 @@
   text-decoration: underline;
   color: rgb(156, 59, 64);
 }
+
 #left-container #date {
   margin: 0;
   color: rgb(27, 32, 40, 0.5);
@@ -59,14 +60,12 @@
   font-size: 1rem;
   font-weight: bold;
   margin: 0;
-  margin-top: 1em;
-  margin-bottom: 0.3rem;
+  margin-top: 1rem;
   padding-block: 0.3rem;
   padding-left: 0.5rem;
 
   color: rgb(27, 32, 40);
   border-top: 3px solid rgb(27, 32, 40);
-  border-bottom: 3px solid rgb(224, 218, 207);
 }
 
 #left-container #fashion {
@@ -75,10 +74,11 @@
   font-weight: 800;
 
   margin: 0;
-  padding-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
+  padding-block: 0.3rem;
   padding-left: 0.5rem;
 
-  border-bottom: 1.5px solid rgb(224, 218, 207);
+  border-block: 3px solid rgb(224, 218, 207);
 }
 
 #left-container #lifestyle {
@@ -91,7 +91,7 @@
   padding-left: 0.5rem;
 
   border-top: 3px solid rgb(224, 218, 207);
-  border-bottom: 1.5px solid rgb(224, 218, 207);
+  border-bottom: 3px solid rgb(224, 218, 207);
 }
 
 #left-container .post-items {
@@ -110,8 +110,8 @@
 }
 
 #left-container .post-items:hover {
-  text-decoration: dashed;
-  font-weight: bold;
+  text-decoration: underline;
+  font-weight: 900;
   color: rgb(156, 59, 64);
 }
 
@@ -162,7 +162,7 @@
   text-align: left;
 
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
 
   margin: 0;
@@ -186,17 +186,25 @@
 }
 
 #right-container .post-card .post-author {
+  width: 6rem;
   text-align: left;
+  display: block;
   margin: 0;
-  margin-top: 0.1rem;
   font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
   color: rgb(27, 32, 40);
+}
+
+#right-container .post-card .post-author:hover {
+  text-decoration: underline;
+  font-weight: 700;
+  color: rgb(156, 59, 64);
 }
 
 #right-container .post-card .post-date {
   text-align: left;
   margin: 0;
-  margin-top: 0.1rem;
   font-size: 0.7rem;
   color: rgb(27, 32, 40, 0.5);
 }

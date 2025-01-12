@@ -49,4 +49,6 @@ router.get("/cafe-humor", cafeController.getCafeHumor);
 router.get("/cafe-life", cafeController.getCafeLife);
 router.get("/cafe-exercise", cafeController.getCafeExercise);
 
+router.get("/my-page", cafeController.getMyPage);
+
 module.exports = router;
