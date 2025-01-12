@@ -1,228 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%-include('includes/head') %>
-    <link rel="stylesheet" href="/styles/brand.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/styles/brand.css" />
+  </head>
+  <body>
     <%-include('includes/header') %>
 
     <main>
-        <div id="banner">
-            <h2>Brand</h2>
+      <div id="banner">
+        <a href="/brand"><h2>Brand</h2></a>
+      </div>
+
+      <div id="content-container">
+        <p id="content">
+          <span> "저의 취향이 가득 담긴" </span>
+          <br />
+          단 하나, 어떤 브랜드도 절대 포기할 수 없는 것들로만 게시해뒀습니다.
+          <br />
+          하나쯤은 좋아하실 거에요.
+        </p>
+      </div>
+      <div id="grid-container">
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://artifacts.co.kr" target="_blank">
+              <img src="/images/brand/artifact.jpg" alt="IMG" />
+            </a>
           </div>
-        <div id="content-container">
-            <p id="content">
-                <span>
-                    "저의 취향이 가득 담긴"
-                </span>
-                <br>
-                단 하나, 어떤 브랜드도 절대 포기할 수 없는 것들로만 게시해뒀습니다. 
-                <br>
-                하나쯤은 좋아하실 거에요.
-            </p>
+          <a href="https://artifacts.co.kr" target="_blank" class="link-text"
+            >Art if acts</a
+          >
         </div>
-        <div id="grid-container">
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://artifacts.co.kr" target="_blank">
-                        <img src="/images/brand/artifact.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://artifacts.co.kr" target="_blank" class="link-text">Art if acts</a>
-            </div>
 
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://outstanding-co.kr/" target="_blank">
-                        <img src="/images/brand/outstanding.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://outstanding-co.kr/" target="_blank" class="link-text">OUTSTANDING</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://demilmfg.com/" target="_blank">
-                        <img src="/images/brand/demil.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://demilmfg.com/" target="_blank" class="link-text">DEMIL MFG & CO</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://m.frizm.co.kr/" target="_blank">
-                        <img src="/images/brand/frizmworks.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://m.frizm.co.kr/" target="_blank" class="link-text">FrizmWorks</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.espionage.co.kr/" target="_blank">
-                        <img src="/images/brand/espionage.jpeg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.espionage.co.kr/" target="_blank" class="link-text">ESPIONAGE</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://ware-house.co.kr/" target="_blank">
-                        <img src="/images/brand/warehouse.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://ware-house.co.kr/" target="_blank" class="link-text">WareHouse</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.sugarcane.jp/" target="_blank">
-                        <img src="/images/brand/슈가케인.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.sugarcane.jp/" target="_blank" class="link-text">SUGAR CANE</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.levi.co.kr/?srsltid=AfmBOoo693XFR9XQbF9sB62wPlllVQ90Q7PGXMlEcaWBdqsVfIxaF5hi" target="_blank">
-                        <img src="/images/brand/리바이스.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.levi.co.kr/?srsltid=AfmBOoo693XFR9XQbF9sB62wPlllVQ90Q7PGXMlEcaWBdqsVfIxaF5hi" target="_blank" class="link-text">Levi's</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://fullcount.co/" target="_blank">
-                        <img src="/images/brand/fullcount.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://fullcount.co/" target="_blank" class="link-text">FULLCOUNT</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.espionage.co.kr/m/product_list.html?xcode=102&type=X#enp_mbris&gf_ref=Yz04MUpZd2g=" target="_blank">
-                        <img src="/images/brand/bronson.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.espionage.co.kr/m/product_list.html?xcode=102&type=X#enp_mbris&gf_ref=Yz04MUpZd2g=" target="_blank" class="link-text">BRONSON</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://vdrstore.com/lookbook/list_basic.html?cate_no=43" target="_blank">
-                        <img src="/images/brand/vdr.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://vdrstore.com/lookbook/list_basic.html?cate_no=43" target="_blank" class="link-text">VDR</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://uniformbridge.com/" target="_blank">
-                        <img src="/images/brand/uniformbridge.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://uniformbridge.com/" target="_blank" class="link-text">UNIFORMBRIDGE</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.ralphlauren.co.kr/" target="_blank">
-                        <img src="/images/brand/RRL.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.ralphlauren.co.kr/" target="_blank" class="link-text">RALPH LAUREN</a>
-            </div>
-            
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.ralphlauren.co.kr/" target="_blank">
-                        <img src="/images/brand/RRL.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.ralphlauren.co.kr/" target="_blank" class="link-text">RRL</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://intheraw.co.kr/" target="_blank">
-                        <img src="/images/brand/intheraw.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://intheraw.co.kr/" target="_blank" class="link-text">INTHERAW</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://roughside.co.kr/" target="_blank">
-                        <img src="/images/brand/roughside.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://roughside.co.kr/" target="_blank" class="link-text">rough side</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://999humanity.kr/" target="_blank">
-                        <img src="/images/brand/999.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://999humanity.kr/" target="_blank" class="link-text">999휴머니티</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://noahny.kr/" target="_blank">
-                        <img src="/images/brand/noah.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://noahny.kr/" target="_blank" class="link-text">Noah</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://shop.supreme.com/collections/all" target="_blank">
-                        <img src="/images/brand/supreme.webp" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://shop.supreme.com/collections/all" target="_blank" class="link-text">Supreme</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.insanegarage.shop/" target="_blank">
-                        <img src="/images/brand/insanegarage.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.insanegarage.shop/" target="_blank" class="link-text">INSANEGARAGE</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://www.carhartt-wip.co.kr/" target="_blank">
-                        <img src="/images/brand/carhartt.png" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://www.carhartt-wip.co.kr/" target="_blank" class="link-text">Carhartt WIP</a>
-            </div>
-
-            <div class="grid-item">
-                <div class="grid-item-img">
-                    <a href="https://m.gramicci.kr/" target="_blank">
-                        <img src="/images/brand/gramicci.jpg" alt="IMG">
-                    </a>
-                </div>
-                <a href="https://m.gramicci.kr/" target="_blank" class="link-text">GRAMICCI</a>
-            </div>
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://outstanding-co.kr/" target="_blank">
+              <img src="/images/brand/outstanding.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://outstanding-co.kr/" target="_blank" class="link-text"
+            >OUTSTANDING</a
+          >
         </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://demilmfg.com/" target="_blank">
+              <img src="/images/brand/demil.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://demilmfg.com/" target="_blank" class="link-text"
+            >DEMIL MFG & CO</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://m.frizm.co.kr/" target="_blank">
+              <img src="/images/brand/frizmworks.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://m.frizm.co.kr/" target="_blank" class="link-text"
+            >FrizmWorks</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://www.espionage.co.kr/" target="_blank">
+              <img src="/images/brand/espionage.jpeg" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://www.espionage.co.kr/"
+            target="_blank"
+            class="link-text"
+            >ESPIONAGE</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://ware-house.co.kr/" target="_blank">
+              <img src="/images/brand/warehouse.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://ware-house.co.kr/" target="_blank" class="link-text"
+            >WareHouse</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://www.sugarcane.jp/" target="_blank">
+              <img src="/images/brand/슈가케인.png" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://www.sugarcane.jp/" target="_blank" class="link-text"
+            >SUGAR CANE</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a
+              href="https://www.levi.co.kr/?srsltid=AfmBOoo693XFR9XQbF9sB62wPlllVQ90Q7PGXMlEcaWBdqsVfIxaF5hi"
+              target="_blank"
+            >
+              <img src="/images/brand/리바이스.png" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://www.levi.co.kr/?srsltid=AfmBOoo693XFR9XQbF9sB62wPlllVQ90Q7PGXMlEcaWBdqsVfIxaF5hi"
+            target="_blank"
+            class="link-text"
+            >Levi's</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://fullcount.co/" target="_blank">
+              <img src="/images/brand/fullcount.png" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://fullcount.co/" target="_blank" class="link-text"
+            >FULLCOUNT</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a
+              href="https://www.espionage.co.kr/m/product_list.html?xcode=102&type=X#enp_mbris&gf_ref=Yz04MUpZd2g="
+              target="_blank"
+            >
+              <img src="/images/brand/bronson.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://www.espionage.co.kr/m/product_list.html?xcode=102&type=X#enp_mbris&gf_ref=Yz04MUpZd2g="
+            target="_blank"
+            class="link-text"
+            >BRONSON</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a
+              href="https://vdrstore.com/lookbook/list_basic.html?cate_no=43"
+              target="_blank"
+            >
+              <img src="/images/brand/vdr.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://vdrstore.com/lookbook/list_basic.html?cate_no=43"
+            target="_blank"
+            class="link-text"
+            >VDR</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://uniformbridge.com/" target="_blank">
+              <img src="/images/brand/uniformbridge.png" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://uniformbridge.com/" target="_blank" class="link-text"
+            >UNIFORMBRIDGE</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://www.ralphlauren.co.kr/" target="_blank">
+              <img src="/images/brand/RRL.png" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://www.ralphlauren.co.kr/"
+            target="_blank"
+            class="link-text"
+            >RALPH LAUREN</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://www.ralphlauren.co.kr/" target="_blank">
+              <img src="/images/brand/RRL.png" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://www.ralphlauren.co.kr/"
+            target="_blank"
+            class="link-text"
+            >RRL</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://intheraw.co.kr/" target="_blank">
+              <img src="/images/brand/intheraw.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://intheraw.co.kr/" target="_blank" class="link-text"
+            >INTHERAW</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://roughside.co.kr/" target="_blank">
+              <img src="/images/brand/roughside.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://roughside.co.kr/" target="_blank" class="link-text"
+            >rough side</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://999humanity.kr/" target="_blank">
+              <img src="/images/brand/999.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://999humanity.kr/" target="_blank" class="link-text"
+            >999휴머니티</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://noahny.kr/" target="_blank">
+              <img src="/images/brand/noah.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://noahny.kr/" target="_blank" class="link-text"
+            >Noah</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://shop.supreme.com/collections/all" target="_blank">
+              <img src="/images/brand/supreme.webp" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://shop.supreme.com/collections/all"
+            target="_blank"
+            class="link-text"
+            >Supreme</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://www.insanegarage.shop/" target="_blank">
+              <img src="/images/brand/insanegarage.png" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://www.insanegarage.shop/"
+            target="_blank"
+            class="link-text"
+            >INSANEGARAGE</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://www.carhartt-wip.co.kr/" target="_blank">
+              <img src="/images/brand/carhartt.png" alt="IMG" />
+            </a>
+          </div>
+          <a
+            href="https://www.carhartt-wip.co.kr/"
+            target="_blank"
+            class="link-text"
+            >Carhartt WIP</a
+          >
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-img">
+            <a href="https://m.gramicci.kr/" target="_blank">
+              <img src="/images/brand/gramicci.jpg" alt="IMG" />
+            </a>
+          </div>
+          <a href="https://m.gramicci.kr/" target="_blank" class="link-text"
+            >GRAMICCI</a
+          >
+        </div>
+      </div>
     </main>
 
     <%-include('includes/footer') %>
-</body>
+  </body>
 </html>

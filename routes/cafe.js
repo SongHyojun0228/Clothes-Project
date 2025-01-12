@@ -1,11 +1,10 @@
 const express = require("express");
 const multer = require("multer");
-const path = require("path");
-const router = express.Router();
-const db = require("../data/database");
-const { ObjectId } = require("mongodb");
 
+const cafeController = require("../controllers/cafe.controller");
 const guardRoute = require("../middlewares/auth-protection-middleware");
+
+const router = express.Router();
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -33,172 +32,21 @@ const upload = multer({
 
 router.use(guardRoute);
 
-router.get("/cafe", async function (req, res) {
-  const sessionUser = req.session.user;
+router.get("/cafe", cafeController.getCafe);
+router.get("/upload-post", cafeController.getUploadPost);
+router.post("/upload-post", upload.array("images", 10), cafeController.postUploadPost);
+router.get("/cafe/:id", cafeController.getCafePost);
+router.post("/cafe/:id/comment", cafeController.postComment);
 
-  const user = await db
-    .getDb()
-    .collection("users")
-    .findOne({ nickname: sessionUser.nickname });
+router.get("/cafe-shoes", cafeController.getCafeShoes);
+router.get("/cafe-look", cafeController.getCafeLook);
+router.get("/cafe-select", cafeController.getCafeSelect);
+router.get("/cafe-drop", cafeController.getCafeDrop);
+router.get("/cafe-sale", cafeController.getCafeSale);
+router.get("/cafe-free", cafeController.getCafeFree);
+router.get("/cafe-eat", cafeController.getCafeEat);
+router.get("/cafe-humor", cafeController.getCafeHumor);
+router.get("/cafe-life", cafeController.getCafeLife);
+router.get("/cafe-exercise", cafeController.getCafeExercise);
 
-  await db
-    .getDb()
-    .collection("users")
-    .updateOne({ nickname: sessionUser.nickname }, { $inc: { visited: 1 } });
-
-  const posts = await db
-    .getDb()
-    .collection("posts")
-    .find()
-    .sort({ date: -1 })
-    .toArray();
-
-  const currentDate = new Date();
-  const today = `${currentDate.getFullYear()}.${String(
-    currentDate.getMonth() + 1
-  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
-
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
-
-  res.render("cafe", {
-    user: { ...user, visited: user.visited + 1 },
-    posts: posts,
-  });
-});
-
-router.get("/upload-post", function (req, res) {
-  res.render("upload-post");
-});
-
-router.post(
-  "/upload-post",
-  upload.array("images", 10),
-  async function (req, res) {
-    try {
-      const imagePaths = req.files.map((file) => `/uploads/${file.filename}`);
-
-      const currentDate = new Date();
-      const formattedDate = `${currentDate.getFullYear()}.${String(
-        currentDate.getMonth() + 1
-      ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(
-        2,
-        "0"
-      )} ${String(currentDate.getHours()).padStart(2, "0")}:${String(
-        currentDate.getMinutes()
-      ).padStart(2, "0")}`;
-
-      const newPost = {
-        post_kind: req.body.post_kind,
-        title: req.body.title,
-        content: req.body.content,
-        images: imagePaths,
-        previewImage: imagePaths[0] || null,
-        author: req.session.user.nickname,
-        date: formattedDate,
-        views: 0,
-      };
-
-      await db.getDb().collection("posts").insertOne(newPost);
-      console.log("게시물 저장 성공:", newPost);
-      res.redirect("cafe");
-    } catch (err) {
-      console.error("업로드 중 오류 발생:", err);
-      res.status(500).send("게시물 업로드 실패");
-    }
-  }
-);
-
-router.get("/cafe/:id", async function (req, res) {
-  const sessionUser = req.session.user;
-  const postId = req.params.id;
-
-  const user = await db
-    .getDb()
-    .collection("users")
-    .findOne({ nickname: sessionUser.nickname });
-
-  const post = await db
-    .getDb()
-    .collection("posts")
-    .findOne({ _id: new ObjectId(postId) });
-
-  // 조회수 증가
-  await db
-    .getDb()
-    .collection("posts")
-    .updateOne({ _id: new ObjectId(postId) }, { $inc: { views: 1 } });
-
-  const comments = await db
-    .getDb()
-    .collection("comments")
-    .find({ postId: new ObjectId(postId) })
-    .toArray();
-
-  res.render("post-detail", {
-    user: user,
-    post: { ...post, views: post.views + 1 },
-    comments: comments,
-  });
-});
-
-router.post("/cafe/:id/comment", async function (req, res) {
-  const sessionUser = req.session.user;
-  const postId = req.params.id;
-
-  const currentDate = new Date();
-  const formattedDate = `${currentDate.getFullYear()}.${String(
-    currentDate.getMonth() + 1
-  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(
-    2,
-    "0"
-  )} ${String(currentDate.getHours()).padStart(2, "0")}:${String(
-    currentDate.getMinutes()
-  ).padStart(2, "0")}`;
-
-  const { comment } = req.body;
-
-  const newComment = {
-    postId: new ObjectId(postId),
-    comment: comment,
-    author: sessionUser.nickname,
-    date: formattedDate,
-  };
-
-  await db.getDb().collection("comments").insertOne(newComment);
-
-  res.status(201).json({
-    comment: newComment.comment,
-    author: newComment.author,
-    date: newComment.date,
-  });
-});
-
-router.get("/my-page", async function (req, res) {
-  const sessionUser = req.session.user;
-
-  const user = await db
-    .getDb()
-    .collection("users")
-    .findOne({ nickname: sessionUser.nickname });
-
-  const posts = await db
-    .getDb()
-    .collection("posts")
-    .find({ author: sessionUser.nickname })
-    .sort({ date: -1 })
-    .toArray();
-
-  const currentDate = new Date();
-  const today = `${currentDate.getFullYear()}.${String(
-    currentDate.getMonth() + 1
-  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
-
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
-
-  res.render("my-page", { user: user, posts: posts });
-});
 module.exports = router;
