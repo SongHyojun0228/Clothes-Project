@@ -319,9 +319,17 @@ async function getMyPage(req, res) {
   res.render("my-page", { user, posts });
 }
 
-module.exports = {
-  getMyPage,
-};
+async function getUserPage(req, res) {
+  const nickname = req.params.nickname;
+  const user = await User.findByNickname(nickname);
+  if (!user) {
+    return res.status(404).send("유저를 찾을 수 없습니다.");
+  }
+
+  const posts = await Post.findByAuthor(nickname);
+
+  res.render("user-page", { user, posts });
+}
 
 module.exports = {
   getCafe,
@@ -340,4 +348,5 @@ module.exports = {
   getCafePost,
   postComment,
   getMyPage,
+  getUserPage
 };

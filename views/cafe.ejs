@@ -65,7 +65,11 @@
                   <span class="new-badge">N</span>
                   <% } %>
                 </div>
-                <a href="" class="post-author"><%= post.author %></a>
+                <% if(post.author === user.nickname) { %>
+                  <p class="post-author">내가 쓴 글</p>
+                <% } else { %>
+                  <a href="/user/<%= post.author %>" class="post-author"><%= post.author %></a>
+                  <% } %>
                 <p class="post-date"><%= post.date %></p>
               </div>
             </div>
