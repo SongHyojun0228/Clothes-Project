@@ -41,11 +41,11 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 const path = require("path");
-const defaultRouter = require("./routes/route");
-const userRouter = require("./routes/user");
-const addRouter = require("./routes/add");
-const wishRouter = require("./routes/wish");
-const cafeRouter = require("./routes/cafe");
+const defaultRouter = require("./routes/default.routes");
+const userRouter = require("./routes/user.routes");
+const cafeRouter = require("./routes/cafe.routes");
+// const addRouter = require("./routes/add.routes");
+// const wishRouter = require("./routes/wish.routes");
 
 app.set("view engine", "ejs");
 
@@ -57,9 +57,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use("/", defaultRouter);
 app.use("/", userRouter);
-app.use("/", addRouter);
-app.use("/", wishRouter);
 app.use("/", cafeRouter);
+// app.use("/", addRouter);
+// app.use("/", wishRouter);
 
 app.use((req, res) => {
   res.status(404).render("404");
