@@ -3,12 +3,13 @@
   <head>
     <%- include('includes/head')%>
     <link rel="stylesheet" href="/styles/my-page.css" />
+    <script src="/scripts/my-page.js" defer></script>
     <title>마이페이지</title>
   </head>
   <body>
     <%- include('includes/header')%>
     <main>
-      <div id="banner"> 
+      <div id="banner">
         <a href="/cafe"><h2>Cafe</h2></a>
       </div>
 
@@ -37,10 +38,49 @@
 
         <div id="right-container">
           <div id="user-info-container">
-            <div id="profile-img">
+            <div id="profile-img-container">
               <% if (user.profileImg) { %>
-              <img src="<%= user.profileImg %>" alt="profile-img" />
+              <img
+                id="profile-preview"
+                src="<%= user.profileImg %>"
+                alt="profile-img"
+              />
+              <% } else { %>
+              <img
+                id="profile-preview"
+                src="/images/profile/default_profile.png"
+                alt="profile-img"
+              />
               <% } %>
+              <div id="profile-change-container">
+                <!-- <form
+                  action="/profile-change"
+                  method="POST"
+                  enctype="multipart/form-data"
+                > -->
+                <input
+                  type="file"
+                  id="profileImg"
+                  name="profileImg"
+                  accept="image/*"
+                />
+                <p id="profile-btn">프로필사진 변경</p>
+                <form action="/delete-profile" method="POST">
+                  <p type="submit" id="default-text">[기본 프로필로 변경]</p>
+                  <button type="submit" id="default-btn">
+                    기본 프로필로 변경
+                  </button>
+                </form>
+                <div id="profile-btn-container">
+                  <button type="submit" class="profile-btn" id="save-btn">
+                    저장
+                  </button>
+                  <button type="reset" class="profile-btn" id="cancel-btn">
+                    취소
+                  </button>
+                </div>
+                <!-- </form> -->
+              </div>
             </div>
             <div id="user-info">
               <p id="user-nickname"><%= user.nickname%></p>
@@ -50,11 +90,11 @@
           </div>
 
           <div id="post-container">
-            <div id="category-container">
+            <!-- <div id="category-container">
               <p>작성글</p>
               <p>작성 댓글</p>
               <p>좋아요한 글</p>
-            </div>
+            </div> -->
 
             <div id="posts">
               <div id="title">
@@ -73,6 +113,15 @@
                   <p class="post-views"><%= post.views%></p>
                 </div>
                 <% } %>
+              </div>
+
+              <div class="pagination">
+                <% for (let i = 1; i <= totalPages; i++) { %> <% if (i ===
+                currentPage) { %>
+                <span class="page-number active"><%= i %></span>
+                <% } else { %>
+                <a href="?page=<%= i %>" class="page-number"><%= i %></a>
+                <% } %> <% } %>
               </div>
             </div>
           </div>

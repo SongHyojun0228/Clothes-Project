@@ -74,6 +74,16 @@
                 </div>
                 <% } %>
               </div>
+
+              <div class="pagination">
+                <% for (let i = 1; i <= totalPages; i++) { %>
+                  <% if (i === currentPage) { %>
+                    <span class="page-number active"><%= i %></span>
+                  <% } else { %>
+                    <a href="?page=<%= i %>" class="page-number"><%= i %></a>
+                  <% } %>
+                <% } %>
+              </div>
             </div>
           </div>
         </div>

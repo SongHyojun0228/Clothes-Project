@@ -1,3 +1,8 @@
+form {
+  margin: 0;
+  padding: 0;
+}
+
 #container {
   width: 60rem;
   margin: 0 auto;
@@ -128,12 +133,111 @@
   display: flex;
 }
 
-#right-container #user-info-container #profile-img {
+#right-container #user-info-container #profile-img-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#right-container #user-info-container #profile-img-container #profile-preview {
   width: 7rem;
   height: 7rem;
   margin-right: 1rem;
-  border-radius: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  /* background-color: rgb(224, 218, 207); */
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #profile-change-container {
+  width: 7rem;
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #profile-change-container
+  input {
+  display: none;
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #profile-change-container
+  #profile-btn {
+  margin: 0;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: rgb(27, 32, 40);
+  border: 1px solid rgb(27, 32, 40);
+  border-radius: 6px;
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #profile-change-container
+  #profile-btn:hover {
+  color: rgb(156, 59, 64);
+  border: 1px solid rgb(156, 59, 64);
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #profile-change-container
+  #profile-btn-container {
+  display: none;
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #profile-change-container
+  .profile-btn {
+  width: 2.8rem;
+  font-size: 1rem;
+  font-family: inherit;
   background-color: rgb(224, 218, 207);
+  border: 1px solid rgb(27, 32, 40);
+  border-radius: 6px;
+  color: rgb(27, 32, 40);
+  margin: 0;
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #profile-change-container
+  .profile-btn:hover {
+  border: 2px solid rgb(156, 59, 64);
+  color: rgb(156, 59, 64);
+}
+
+#right-container #user-info-container #profile-img-container #default-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgb(27, 32, 40);
+  background: none;
+  border: none;
+  margin: 0;
+  margin-top: 0.2rem;
+  padding: 0;
+}
+
+#right-container
+  #user-info-container
+  #profile-img-container
+  #default-text:hover {
+  color: rgb(156, 59, 64);
+  font-weight: 900;
+}
+
+#right-container #user-info-container #profile-img-container #default-btn {
+  display: none;
 }
 
 #right-container #user-info-container #user-info {
@@ -222,7 +326,7 @@
 .post-item {
   display: flex;
   align-items: center;
-  gap:0;
+  gap: 0;
   border-bottom: 1px solid rgb(224, 218, 207);
 }
 
@@ -260,6 +364,34 @@
   color: rgb(27, 32, 40, 0.5);
 }
 
+.pagination {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.pagination .page-number {
+  display: block;
+  color: rgb(27, 32, 40);
+  font-size: 1rem;
+  margin: 0;
+  margin-inline: 0.5rem;
+  text-decoration: none;
+}
+
+.pagination .page-number:hover {
+  color: rgb(234, 207, 31);
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.pagination .page-number.active {
+  color: rgb(156, 59, 64);
+  font-weight: 900;
+}
+
 @media (max-width: 60rem) {
   #container {
     width: 100%;
@@ -288,26 +420,26 @@
   #post-title {
     width: 17.76rem;
   }
-  
+
   #post-date {
     width: 4rem;
   }
-  
+
   #post-views {
     width: 4rem;
   }
 
   .post-title {
     width: 17.76rem;
-    white-space: nowrap;  
-    overflow: hidden; 
-    text-overflow: ellipsis;  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  
+
   .post-date {
     width: 4rem;
   }
-  
+
   .post-views {
     width: 4rem;
   }

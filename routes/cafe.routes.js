@@ -30,6 +30,22 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
+async function changeProfile(req, res) {
+  if (!req.file) {
+    return res.status(400).json({ message: "파일이 업로드되지 않았습니다." });
+  }
+
+  try {
+    const profileImgUrl = `/uploads/profiles/${req.file.filename}`;
+    await User.updateProfileImg(req.session.user.nickname, profileImgUrl);
+
+    res.json({ message: "프로필 변경 성공", profileImg: profileImgUrl });
+  } catch (error) {
+    console.error("프로필 업데이트 실패:", error);
+    res.status(500).json({ message: "서버 오류" });
+  }
+}
+
 router.use(guardRoute);
 
 router.get("/cafe", cafeController.getCafe);

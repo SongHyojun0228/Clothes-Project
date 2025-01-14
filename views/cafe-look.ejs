@@ -61,6 +61,7 @@
                   <a href="/cafe/<%= post._id%>" class="post-title"
                     ><%= post.title %></a
                   >
+                  <span class="comment">[<%= post.commentCount %>]</span>
                   <% if (post.isNew) { %>
                   <span class="new-badge">N</span>
                   <% } %>

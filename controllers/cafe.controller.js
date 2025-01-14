@@ -40,180 +40,321 @@ async function getCafeShoes(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("오뭐신");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("오뭐신");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("오뭐신", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-shoes", { user, posts });
+  res.render("cafe-shoes", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
+
 
 async function getCafeLook(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("오늘의 룩");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("오늘의 룩");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("오늘의 룩", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-look", { user, posts });
+  res.render("cafe-look", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeSelect(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("골라줘");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("골라줘");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("골라줘", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-select", { user, posts });
+  res.render("cafe-select", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeDrop(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("발매정보");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("발매정보");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("발매정보", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-drop", { user, posts });
+  res.render("cafe-drop", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeSale(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("세일정보");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("세일정보");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("세일정보", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-sale", { user, posts });
+  res.render("cafe-sale", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeFree(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("자유");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("자유");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("자유", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-free", { user, posts });
+  res.render("cafe-free", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeEat(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("밥밥");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("밥밥");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("밥밥", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-eat", { user, posts });
+  res.render("cafe-eat", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeHumor(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("유머");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("유머");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("유머", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-humor", { user, posts });
+  res.render("cafe-humor", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeLife(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("일상");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("일상");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("일상", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-life", { user, posts });
+  res.render("cafe-life", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getCafeExercise(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
-  const posts = await Post.getByKind("운동");
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15;
+  const totalPosts = await Post.countByKind("운동");
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByKindPaginated("운동", page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
-  res.render("cafe-exercise", { user, posts });
+  res.render("cafe-exercise", {
+    user,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 function getUploadPost(req, res) {
@@ -324,12 +465,15 @@ async function toggleLike(req, res) {
 
 async function getMyPage(req, res) {
   const sessionUser = req.session.user;
-  if (!sessionUser) {
-    return res.redirect("/login");
-  }
 
   const user = await User.findByNickname(sessionUser.nickname);
-  const posts = await Post.findByAuthor(sessionUser.nickname);
+
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 10; 
+  const totalPosts = await Post.countByAuthor(sessionUser.nickname); 
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getByAuthorPaginated(sessionUser.nickname, page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
@@ -340,19 +484,44 @@ async function getMyPage(req, res) {
     post.isNew = post.date.startsWith(today);
   });
 
-  res.render("my-page", { user, posts });
+  res.render("my-page", {
+    user,
+    posts,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 async function getUserPage(req, res) {
-  const nickname = req.params.nickname;
-  const user = await User.findByNickname(nickname);
+  const username = req.params.nickname;
+  const user = await User.findByNickname(username);
+
   if (!user) {
-    return res.status(404).send("유저를 찾을 수 없습니다.");
+    return res.status(404).send("해당 사용자를 찾을 수 없습니다.");
   }
 
-  const posts = await Post.findByAuthor(nickname);
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 10; 
+  const totalPosts = await Post.countByAuthor(username);
+  const totalPages = Math.ceil(totalPosts / perPage); 
 
-  res.render("user-page", { user, posts });
+  const posts = await Post.getByAuthorPaginated(username, page, perPage); 
+
+  const currentDate = new Date();
+  const today = `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+
+  posts.forEach((post) => {
+    post.isNew = post.date.startsWith(today);
+  });
+
+  res.render("user-page", {
+    user,
+    posts,
+    currentPage: page,
+    totalPages: totalPages,
+  });
 }
 
 module.exports = {

@@ -25,15 +25,30 @@ class User {
   }
 
   static async incrementVisit(nickname) {
-    return await db.getDb().collection("users").updateOne(
-      { nickname },
-      { $inc: { visited: 1 } }
-    );
+    return await db
+      .getDb()
+      .collection("users")
+      .updateOne({ nickname }, { $inc: { visited: 1 } });
   }
-  
+
   static async verifyPassword(enteredPassword, hashedPassword) {
     return await bcrypt.compare(enteredPassword, hashedPassword);
   }
+
+  static async updateProfileImg(nickname, profileImgUrl) {
+    return await db
+      .getDb()
+      .collection("users")
+      .updateOne({ nickname }, { $set: { profileImg: profileImgUrl } });
+  }
+
+  static async removeProfileImg(nickname) {
+    return await db
+      .getDb()
+      .collection("users")
+      .updateOne({ nickname }, { $unset: { profileImg: "" } });
+  }
+  
 }
 
 module.exports = User;
