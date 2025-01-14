@@ -178,7 +178,7 @@
   width: 44rem;
 }
 
-#right-container #content-container img {
+#right-container #content-container .post-image {
   width: 100%;
   margin-top: 1rem;
 }
@@ -194,6 +194,29 @@
 
 #container #content-container #see-more span {
   font-weight: 900;
+}
+
+#heart-container {
+  text-align: left;
+  margin-block: 0.5rem;
+}
+
+#heart-container #heart-button {
+  background-color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#heart-container #heart {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+#heart-container #heart-text,
+#heart-container #like-count {
+  font-size: 1.1rem;
 }
 
 #container #comment-container {

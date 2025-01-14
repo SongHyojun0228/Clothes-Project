@@ -1,54 +1,61 @@
 h2 {
-    margin: 4rem;
-    text-align: center;
-    color: rgb(27,32,40);
+  margin: 4rem;
+  text-align: center;
+  color: rgb(27, 32, 40);
 }
 
 #container {
-    margin: auto;
-    width: 50rem;
+  margin: auto;
+  width: 50rem;
 }
 
 .basis-content {
-    font-size: 1rem;
-    color: rgb(27,32,40,0.5);
-    text-align: left;
-    line-height: 1.8;
-    margin: 0;
+  font-size: 1rem;
+  color: rgb(27, 32, 40, 0.5);
+  text-align: left;
+  line-height: 1.8;
+  margin: 0;
 }
 
 .hightlight {
-    color: rgb(27,32,40);
-    font-weight: 500;
+  color: rgb(27, 32, 40);
+  font-weight: 500;
 }
 
 .subheadline {
-    padding-top: 3rem;
-    font-size: 1.2rem;
-    color: rgb(27,32,40);
-    text-align: left;
-    font-weight: bold;
+  padding-top: 3rem;
+  font-size: 1.2rem;
+  color: rgb(27, 32, 40);
+  text-align: left;
+  font-weight: bold;
 }
 
 img {
-    display: block;
-    width: 100%;
-    margin: 1.5rem auto;
-    margin-left: 0;
+  display: block;
+  width: 100%;
+  margin: 1.5rem auto;
+  margin-left: 0;
 }
 
 .half-img {
-    width: 20rem;
+  width: 20rem;
 }
 
 .next-episode {
-    display: block;
-    text-align: left;
-    font-size: 1.2rem;
-    color: rgb(27,32,40);
+  display: block;
+  text-align: left;
+  font-size: 1.2rem;
+  color: rgb(27, 32, 40);
 }
 
 .next-episode:hover {
-    font-weight: bold;
-    color: rgb(234, 207, 31);
+  font-weight: bold;
+  color: rgb(234, 207, 31);
+}
+
+@media (max-width: 60rem) {
+  #container {
+    width: 30rem;
+    flex-direction: column;
+  }
 }

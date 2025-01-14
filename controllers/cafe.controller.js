@@ -9,20 +9,30 @@ async function getCafe(req, res) {
   const user = await User.findByNickname(sessionUser.nickname);
   await User.incrementVisit(sessionUser.nickname);
 
-  const posts = await Post.getAll();
+  const page = parseInt(req.query.page) || 1; 
+  const perPage = 15; 
+  const totalPosts = await Post.countAll(); 
+  const totalPages = Math.ceil(totalPosts / perPage); 
+
+  const posts = await Post.getPaginated(page, perPage); 
 
   const currentDate = new Date();
   const today = `${currentDate.getFullYear()}.${String(
     currentDate.getMonth() + 1
   ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
 
-  posts.forEach((post) => {
-    post.isNew = post.date.startsWith(today);
-  });
+  const postsWithComments = await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
 
   res.render("cafe", {
     user: { ...user, visited: user.visited + 1 },
-    posts: posts,
+    posts: postsWithComments,
+    currentPage: page,
+    totalPages: totalPages,
   });
 }
 
@@ -298,6 +308,20 @@ async function postComment(req, res) {
   });
 }
 
+async function toggleLike(req, res) {
+  const sessionUser = req.session.user;
+  const postId = req.params.id;
+  const userId = sessionUser.nickname;
+
+  const result = await Post.updateLikes(postId, userId);
+
+  if (!result) {
+    return res.status(404).json({ error: "게시물을 찾을 수 없습니다." });
+  }
+
+  res.json(result);
+}
+
 async function getMyPage(req, res) {
   const sessionUser = req.session.user;
   if (!sessionUser) {
@@ -347,6 +371,9 @@ module.exports = {
   postUploadPost,
   getCafePost,
   postComment,
+
+  toggleLike,
+
   getMyPage,
-  getUserPage
+  getUserPage,
 };

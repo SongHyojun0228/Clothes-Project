@@ -49,6 +49,8 @@ router.get("/cafe-humor", cafeController.getCafeHumor);
 router.get("/cafe-life", cafeController.getCafeLife);
 router.get("/cafe-exercise", cafeController.getCafeExercise);
 
+router.post("/cafe/:id/like", cafeController.toggleLike);
+
 router.get("/my-page", cafeController.getMyPage);
 router.get("/user/:nickname", cafeController.getUserPage);
 

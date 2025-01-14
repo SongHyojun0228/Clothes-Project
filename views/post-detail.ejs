@@ -60,6 +60,16 @@
             <a id="see-more" href=""
               ><span><%=post.author%></span>님의 게시글 더보기 ></a
             >
+
+            <div id="heart-container" data-post-id="<%= post._id %>" data-liked="<%= post.likedUsers && post.likedUsers.includes(user.nickname) %>">
+              <button id="heart-button">
+                <img src="<%= post.likedUsers && post.likedUsers.includes(user.nickname) ? '/images/heart/heart_red.png' : '/images/heart/heart_empty.png' %>"
+                  id="heart"
+                  alt="heart-img">
+                  <span id="heart-text">좋아요</span>
+              </button>
+              <span id="like-count"><%= post.likes || 0 %></span>
+            </div>
           </div>
 
           <div id="comment-container">

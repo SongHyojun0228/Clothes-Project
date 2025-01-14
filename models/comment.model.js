@@ -16,8 +16,15 @@ class Comment {
       .collection("comments")
       .insertOne({
         ...commentData,
-        postId: new ObjectId(commentData.postId), 
+        postId: new ObjectId(commentData.postId),
       });
+  }
+
+  static async countByPostId(postId) {
+    return await db
+      .getDb()
+      .collection("comments")
+      .countDocuments({ postId: new ObjectId(postId) });
   }
 }
 

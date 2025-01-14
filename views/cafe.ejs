@@ -57,22 +57,34 @@
                 <% } %>
               </a>
               <div class="content-container">
-                <div class="title-container"> 
+                <div class="title-container">
                   <a href="/cafe/<%= post._id%>" class="post-title"
                     ><%= post.title %></a
                   >
+                  <span class="comment">[<%= post.commentCount %>]</span>
                   <% if (post.isNew) { %>
                   <span class="new-badge">N</span>
                   <% } %>
                 </div>
                 <% if(post.author === user.nickname) { %>
-                  <p class="post-author">내가 쓴 글</p>
+                <p class="post-author">내가 쓴 글</p>
                 <% } else { %>
-                  <a href="/user/<%= post.author %>" class="post-author"><%= post.author %></a>
-                  <% } %>
+                <a href="/user/<%= post.author %>" class="post-author"
+                  ><%= post.author %></a>
+                <% } %>
                 <p class="post-date"><%= post.date %></p>
               </div>
             </div>
+            <% } %>
+          </div>
+
+          <div class="pagination">
+            <% for (let i = 1; i <= totalPages; i++) { %>
+              <% if (i === currentPage) { %>
+                <span class="page-number active"><%= i %></span>
+              <% } else { %>
+                <a href="?page=<%= i %>" class="page-number"><%= i %></a>
+              <% } %>
             <% } %>
           </div>
         </div>
