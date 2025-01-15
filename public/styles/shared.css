@@ -10,8 +10,9 @@
 3.	Dark Khaki: RGB(189, 183, 107)
 4.	Sand: RGB(237, 201, 175) */
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -33,7 +34,6 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: rgb(27, 32, 40);
 }
 
@@ -64,7 +64,7 @@ button {
 
 #logo a {
   padding: 0.25rem 0.75rem;
-  text-decoration: none;
+
   color: rgb(234, 207, 31);
 }
 
@@ -90,7 +90,6 @@ nav {
 
 #main-header .nav-item a,
 #main-header .nav-item button {
-  text-decoration: none;
   display: block;
   padding: 0.25rem 0.75rem;
 
@@ -111,7 +110,6 @@ nav {
   border-radius: 6px;
 }
 
-
 /* Footer*/
 footer {
   display: flex;
@@ -126,7 +124,7 @@ footer {
 footer div p,
 footer div a {
   display: block;
-  text-decoration: none;
+
   text-align: left;
   font-size: 1rem;
 
@@ -157,11 +155,10 @@ footer div p:hover {
 
 .btn:hover {
   font-weight: bold;
-  background-color: rgb(156,59,64);
+  background-color: rgb(156, 59, 64);
   color: rgb(234, 207, 31);
   border: 1px dashed rgb(234, 207, 31);
 }
-
 
 /* 사이드 바*/
 #aside-navigation {
@@ -214,27 +211,28 @@ footer div p:hover {
 }
 
 .aside-item {
-    list-style: none;
-    padding: 1rem;
+  list-style: none;
+  padding: 1rem;
 }
 
-.aside-item a, .aside-item form button {
-    font-family: "Kleader", "CooperFiveOpti";
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 0.5rem;
+.aside-item a,
+.aside-item form button {
+  font-family: "Kleader", "CooperFiveOpti";
 
-    color: rgb(234, 207, 31);
-    background: rgb(27, 32, 40);
-    border: 2px dashed rgb(27, 32, 40);
-    border-radius: 4px;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+
+  color: rgb(234, 207, 31);
+  background: rgb(27, 32, 40);
+  border: 2px dashed rgb(27, 32, 40);
+  border-radius: 4px;
 }
 
 .aside-item a:hover,
 .aside-item form button:hover {
-    color: rgb(156, 59, 64);
-    border: 2px dashed rgb(156, 59, 64);
+  color: rgb(156, 59, 64);
+  border: 2px dashed rgb(156, 59, 64);
 }
 
 header {
@@ -244,9 +242,6 @@ header {
 header.blurred {
   filter: blur(5px);
 }
-
-
-
 
 #banner {
   width: 100%;
@@ -263,11 +258,10 @@ header.blurred {
 #banner a {
   display: block;
   margin: auto;
-  text-decoration: none;
 }
 
 #banner h2 {
-    margin: auto;
+  margin: auto;
   color: rgb(224, 218, 207);
   /* color: rgb(27,32,40); */
   /* color: rgb(156,59,64); */
@@ -277,8 +271,6 @@ header.blurred {
   text-shadow: 1px 1px 0px rgb(27, 32, 40), -1px -1px 0px rgb(27, 32, 40),
     -1px 1px 0px rgb(27, 32, 40), 1px -1px 0px rgb(27, 32, 40);
 }
-
-
 
 @media (max-width: 100rem) {
   nav {

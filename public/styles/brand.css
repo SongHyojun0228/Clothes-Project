@@ -7,7 +7,6 @@
   font-size: 1.2rem;
   text-align: center;
   font-weight: 800;
- 
 }
 
 #content span {
@@ -31,7 +30,7 @@
   border: 2px solid rgb(27, 32, 40);
   border-radius: 6px;
   background-color: white;
- 
+
   width: 20rem;
   height: 28rem;
   transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
@@ -62,7 +61,6 @@
 }
 
 .link-text {
-  text-decoration: none;
   display: block;
   font-size: 1.3rem;
   font-weight: 700;

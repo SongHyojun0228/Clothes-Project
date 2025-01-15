@@ -14,13 +14,12 @@
 }
 
 #left-container #nickname {
-  text-decoration: none;
   display: block;
   font-size: 1rem;
   font-weight: 900;
   margin: 0;
 
-  
+  color: rgb(27, 32, 40);
 }
 
 #left-container #nickname:hover {
@@ -37,7 +36,7 @@
 
 #left-container #upload-post-btn {
   display: block;
-  text-decoration: none;
+
   width: 100%;
   font-size: 1rem;
   font-weight: 700;
@@ -45,7 +44,7 @@
   padding: 0.2rem 0.4rem;
 
   background-color: rgb(224, 218, 207);
-  
+  color: rgb(27, 32, 40);
   border-radius: 4px;
 }
 
@@ -64,7 +63,7 @@
   padding-block: 0.3rem;
   padding-left: 0.5rem;
 
-  
+  color: rgb(27, 32, 40);
   border-top: 3px solid rgb(27, 32, 40);
 }
 
@@ -96,7 +95,6 @@
 
 #left-container .post-items {
   display: block;
-  text-decoration: none;
 
   text-align: left;
   font-size: 1rem;
@@ -106,7 +104,7 @@
   padding-block: 0.1rem;
   padding-left: 0.5rem;
 
-  
+  color: rgb(27, 32, 40);
 }
 
 #left-container .post-items:hover {
@@ -163,14 +161,13 @@
 
   font-size: 0.8rem;
   font-weight: 700;
-  text-decoration: none;
 
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
-  
+  color: rgb(27, 32, 40);
 }
 
 #right-container .post-card .post-title:hover {
@@ -182,7 +179,7 @@
 #right-container .post-card .comment {
   font-size: 0.8rem;
   font-weight: 900;
-  
+  color: rgb(27, 32, 40);
 }
 
 #right-container .post-card .new-badge {
@@ -202,8 +199,8 @@
   margin: 0;
   font-size: 0.8rem;
   font-weight: 500;
-  text-decoration: none;
-  
+
+  color: rgb(27, 32, 40);
 }
 
 #right-container .post-card .post-author:hover {
@@ -229,11 +226,10 @@
 
 #right-container .pagination .page-number {
   display: block;
-  
+  color: rgb(27, 32, 40);
   font-size: 1rem;
   margin: 0;
   margin-inline: 0.5rem;
-  text-decoration: none;
 }
 
 #right-container .pagination .page-number:hover {

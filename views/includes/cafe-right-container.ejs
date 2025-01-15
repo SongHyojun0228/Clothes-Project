@@ -1,0 +1,53 @@
+<div id="right-container">
+  <p id="posts">전체글보기</p>
+
+  <div id="post-container">
+    <% for (const post of posts) { %>
+    <div class="post-card">
+      <a href="/cafe/<%= post._id%>">
+        <% if (post.previewImage) { %>
+        <img
+          src="<%= post.previewImage %>"
+          alt="미리보기 이미지"
+          class="post-thumbnail"
+        />
+        <% } else { %>
+        <img
+          src="/images/default-post.png"
+          alt="기본 이미지"
+          class="post-thumbnail"
+        />
+        <% } %>
+      </a>
+      <div class="content-container">
+        <div class="title-container">
+          <a href="/cafe/<%= post._id%>" class="post-title"
+            ><%= post.title %></a
+          >
+          <span class="comment">[<%= post.commentCount %>]</span>
+          <% if (post.isNew) { %>
+          <span class="new-badge">N</span>
+          <% } %>
+        </div>
+        <% if(post.author === user.nickname) { %>
+        <p class="post-author">내가 쓴 글</p>
+        <% } else { %>
+        <a href="/user/<%= post.author %>" class="post-author"
+          ><%= post.author %></a>
+        <% } %>
+        <p class="post-date"><%= post.date %></p>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+  <div class="pagination">
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <% if (i === currentPage) { %>
+        <span class="page-number active"><%= i %></span>
+      <% } else { %>
+        <a href="?page=<%= i %>" class="page-number"><%= i %></a>
+      <% } %>
+    <% } %>
+  </div>
+</div>

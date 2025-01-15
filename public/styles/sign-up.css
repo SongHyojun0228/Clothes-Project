@@ -45,7 +45,6 @@ form {
 }
 
 label {
-   
   margin-block: 2rem 0.5rem;
   display: block;
   font-size: 1.2rem;
@@ -112,7 +111,7 @@ input:-webkit-autofill::first-line {
 button,
 #cancelbutton {
   display: block;
-  text-decoration: none;
+
   width: 7rem;
 
   font-size: 1.2rem;
@@ -121,7 +120,6 @@ button,
   padding: 0.5rem 0.8rem;
   margin: 2rem 0.5rem;
 
-   
   border: 2px dotted rgb(27, 32, 40);
   border-radius: 4px;
   background-color: rgb(224, 218, 207);
@@ -136,7 +134,6 @@ button:hover,
 }
 
 #other-page a {
-  text-decoration: none;
   color: rgb(234, 207, 31);
   font-size: 1rem;
 }

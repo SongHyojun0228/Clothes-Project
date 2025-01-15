@@ -14,13 +14,10 @@
 }
 
 #left-container #nickname {
-  text-decoration: none;
   display: block;
   font-size: 1rem;
   font-weight: 900;
   margin: 0;
-
- 
 }
 
 #left-container #nickname:hover {
@@ -37,7 +34,7 @@
 
 #left-container #upload-post-btn {
   display: block;
-  text-decoration: none;
+
   width: 100%;
   font-size: 1rem;
   font-weight: 700;
@@ -45,7 +42,7 @@
   padding: 0.2rem 0.4rem;
 
   background-color: rgb(224, 218, 207);
- 
+
   border-radius: 4px;
 }
 
@@ -65,7 +62,6 @@
   padding-block: 0.3rem;
   padding-left: 0.5rem;
 
- 
   border-top: 3px solid rgb(27, 32, 40);
   border-bottom: 3px solid rgb(224, 218, 207);
 }
@@ -97,7 +93,6 @@
 
 #left-container .post-items {
   display: block;
-  text-decoration: none;
 
   text-align: left;
   font-size: 1rem;
@@ -106,8 +101,6 @@
   margin: 0;
   padding-block: 0.1rem;
   padding-left: 0.5rem;
-
- 
 }
 
 #left-container .post-items:hover {
@@ -127,14 +120,14 @@
 #right-container #post-info {
   text-align: left;
   padding-bottom: 1rem;
- 
+
   margin: 0;
   border-bottom: 1px solid rgb(224, 218, 207);
 }
 
 #right-container #post-kind {
   display: block;
-  text-decoration: none;
+
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -165,7 +158,6 @@
   margin: 0;
   font-size: 1.2rem;
   font-weight: 900;
- 
 }
 
 #right-container #post-date {
@@ -184,15 +176,14 @@
 
 #right-container .authority-container {
   display: flex;
-  gap: 0.5rem; 
-  align-items: center; 
+  gap: 0.5rem;
+  align-items: center;
 }
 
 #right-container #detail-container .authority {
   font-size: 1rem;
- 
-  text-decoration: none;
-  border:none;
+
+  border: none;
   background: none;
 }
 
@@ -225,10 +216,9 @@
 #container #content-container #see-more {
   display: block;
   text-align: left;
-  text-decoration: none;
+
   font-size: 0.9rem;
   margin-block: 2rem;
- 
 }
 
 #container #content-container #see-more span {
@@ -283,10 +273,6 @@
   margin-bottom: 0.5rem;
 }
 
-#container #comment-list .comment-item .comment-profile a {
-  text-decoration: none;
-}
-
 #container #comment-list .comment-item .comment-profile img {
   width: 2rem;
   height: 2rem;
@@ -298,16 +284,12 @@
   font-size: 1rem;
   font-weight: 900;
   margin: 0;
-
- 
 }
 
 #container #comment-list .comment-item .comment {
   font-size: 1rem;
   font-weight: 500;
   margin: 0;
-
- 
 }
 
 #container #comment-list .comment-item .date {
@@ -362,7 +344,6 @@
 }
 
 #container #comment-container #comment-input-container button:hover {
- 
   font-weight: 900;
 }
 
@@ -394,7 +375,7 @@
   #container #comment-container {
     width: 26rem;
   }
-  
+
   #container #comment-container #comment-input-container input {
     width: 23rem;
   }
