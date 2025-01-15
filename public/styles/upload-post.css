@@ -81,6 +81,11 @@ input:focus,
   font-size: 1rem;
 }
 
+#container #text-container #existing-images .post-preview-image {
+  width: 26rem;
+  margin: 0.5rem;
+}
+
 #container button {
   margin-top: 2rem;
   font-size: 1.2rem;

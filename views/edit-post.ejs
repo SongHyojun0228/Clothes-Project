@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head') %>
+
+    <link rel="stylesheet" href="/styles/upload-post.css" />
+    <title>카페 글 수정</title>
+  </head>
+  <body>
+    <%- include('includes/header') %>
+    <main>
+      <%- include('includes/banner', {banner:'Cafe'}) %>
+      
+      <div id="container">
+        <h2 id="title">카페 글 수정</h2>
+
+        <form action="/cafe/<%= post._id %>/edit" method="POST" enctype="multipart/form-data">
+          <div id="what-post">
+            <select name="post_kind" id="post-kind">
+              <option value="<%= post.post_kind%>" disabled selected>
+                게시판을 선택해 주세요.
+              </option>
+              <optgroup label="Fashion">
+                <option value="오뭐신" <%= post.post_kind === '오뭐신' ? 'selected' : '' %>>오뭐신</option>
+                <option value="오늘의 룩" <%= post.post_kind === '오늘의 룩' ? 'selected' : '' %>>오늘의 룩</option>
+                <option value="골라줘" <%= post.post_kind === '골라줘' ? 'selected' : '' %>>골라줘</option>
+                <option value="발매정보" <%= post.post_kind === '발매정보' ? 'selected' : '' %>>발매정보</option>
+                <option value="세일정보" <%= post.post_kind === '세일정보' ? 'selected' : '' %>>세일정보</option>
+              </optgroup>
+              <optgroup label="Lifestyle">
+                <option value="자유" <%= post.post_kind === '자유' ? 'selected' : '' %>>자유</option>
+                <option value="밥밥" <%= post.post_kind === '밥밥' ? 'selected' : '' %>>밥밥</option>
+                <option value="유머" <%= post.post_kind === '유머' ? 'selected' : '' %>>유머</option>
+                <option value="일상" <%= post.post_kind === '일상' ? 'selected' : '' %>>일상</option>
+                <option value="운동" <%= post.post_kind === '운동' ? 'selected' : '' %>>운동</option>
+              </optgroup>
+            </select>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value="<%= post.title %>"
+            />
+          </div>
+
+          <div id="text-container">
+            <textarea
+              name="content"
+              id="content"
+            ><%= post.content %></textarea>
+
+            <div id="existing-images">
+              <% if (post.images && post.images.length > 0) { %>
+                <% post.images.forEach(function(image) { %>
+                  <img src="<%= image %>" class="post-preview-image">
+                  <input type="hidden" name="existingImages" value="<%= post.image %>">
+                <% }); %>
+              <% } %>
+            </div>
+
+            <input type="file" id="images" name="images" accept="image/*" multiple>
+          </div>
+
+          <button>수정</button>
+        </form>
+      </div>
+    </main>
+    <%- include('includes/footer') %>
+  </body>
+</html>

@@ -8,9 +8,7 @@
   <body>
     <%-include('includes/header')%>
     <main>
-      <div id="banner">
-        <a href="/cafe"><h2>Cafe</h2></a>
-      </div>
+      <%- include('includes/banner', {banner:"Cafe"})%>
 
       <div id="container">
         <%-include('includes/cafe-left-container')%>

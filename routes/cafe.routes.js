@@ -49,11 +49,6 @@ async function changeProfile(req, res) {
 router.use(guardRoute);
 
 router.get("/cafe", cafeController.getCafe);
-router.get("/upload-post", cafeController.getUploadPost);
-router.post("/upload-post", upload.array("images", 10), cafeController.postUploadPost);
-router.get("/cafe/:id", cafeController.getCafePost);
-router.post("/cafe/:id/comment", cafeController.postComment);
-
 router.get("/cafe-shoes", cafeController.getCafeShoes);
 router.get("/cafe-look", cafeController.getCafeLook);
 router.get("/cafe-select", cafeController.getCafeSelect);
@@ -65,9 +60,18 @@ router.get("/cafe-humor", cafeController.getCafeHumor);
 router.get("/cafe-life", cafeController.getCafeLife);
 router.get("/cafe-exercise", cafeController.getCafeExercise);
 
+router.get("/upload-post", cafeController.getUploadPost);
+router.post("/upload-post", upload.array("images", 10), cafeController.postUploadPost);
+router.get("/cafe/:id", cafeController.getCafePost);
+router.post("/cafe/:id/comment", cafeController.postComment);
 router.post("/cafe/:id/like", cafeController.toggleLike);
+
+router.get("/cafe/:id/edit", cafeController.getEditPost);
+router.post("/cafe/:id/edit", upload.array("images", 10), cafeController.postEditPost);
+
 
 router.get("/my-page", cafeController.getMyPage);
 router.get("/user/:nickname", cafeController.getUserPage);
+router.post("/cafe/:id/delete", cafeController.deletePost);
 
 module.exports = router;

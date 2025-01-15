@@ -7,9 +7,8 @@
   <body>
     <%-include('includes/header') %>
     <main>
-      <div id="banner">
-        <h2>로그인</h2>
-      </div>
+      <%- include('includes/banner', {banner:"로그인"})%>
+
       <div id="form-container">
         <div id="yellow-line">
           <form action="/login" method="POST">

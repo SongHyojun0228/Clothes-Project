@@ -35,6 +35,7 @@ body {
 
 a {
   color: rgb(27, 32, 40);
+  text-decoration: none;
 }
 
 button {

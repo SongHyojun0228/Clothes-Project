@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeCommentFeature();
   initializeLikeFeature();
   initializeProfileChangeFeature();
+  confirmDelete();
 });
 
 /* 댓글 기능 */
@@ -95,3 +96,6 @@ function updateLikeUI(data, heartImg, likeCount) {
     : "/images/heart/heart_empty.png";
 }
 
+function confirmDelete() {
+  return confirm("정말로 게시글을 삭제하시겠습니까?");
+}

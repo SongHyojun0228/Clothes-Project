@@ -127,7 +127,16 @@ class Post {
     return { likes: post.likes + (hasLiked ? -1 : 1), liked: !hasLiked };
   }
 
+  static async updateById(postId, updatedPost) {
+    return await db.getDb().collection("posts").updateOne(
+      { _id: new ObjectId(postId) },
+      { $set: updatedPost }
+    );
+  }
 
+  static async deleteById(postId) {
+    return await db.getDb().collection("posts").deleteOne({ _id: new ObjectId(postId) });
+  }  
 }
 
 module.exports = Post;
