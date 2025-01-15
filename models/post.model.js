@@ -71,11 +71,21 @@ class Post {
   }
 
   static async getById(postId) {
-    return await db
+    const post = await db
       .getDb()
       .collection("posts")
       .findOne({ _id: new ObjectId(postId) });
+  
+    if (!post) return null;
+  
+    const authorProfile = await db
+      .getDb()
+      .collection("users")
+      .findOne({ nickname: post.author }, { projection: { profileImg: 1 } });
+  
+    return { ...post, authorProfile: authorProfile ? authorProfile.profileImg : null };
   }
+  
 
   static async incrementViews(postId) {
     return await db

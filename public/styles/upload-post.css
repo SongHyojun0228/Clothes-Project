@@ -9,7 +9,7 @@
   font-weight: bold;
   text-align: left;
   padding-bottom: 0.3rem;
-  color: rgb(27, 32, 40);
+   
   border-bottom: 3px solid rgb(27, 32, 40);
 }
 
@@ -47,7 +47,7 @@ input:focus,
   padding: 0.7rem 1.2rem;
   width: 55rem;
 
-  color: rgb(27, 32, 40);
+   
   border: 1px solid rgb(224, 218, 207);
   border-radius: 8px;
   background-color: rgb(224, 218, 207);

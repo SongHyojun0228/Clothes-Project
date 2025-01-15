@@ -45,7 +45,7 @@ form {
 }
 
 label {
-  color: rgb(27, 32, 40);
+   
   margin-block: 2rem 0.5rem;
   display: block;
   font-size: 1.2rem;
@@ -109,7 +109,7 @@ button,
   padding: 0.5rem 0.8rem;
   margin: 2rem 0.5rem;
 
-  color: rgb(27, 32, 40);
+   
   border: 2px dotted rgb(27, 32, 40);
   border-radius: 4px;
   background-color: rgb(224, 218, 207);

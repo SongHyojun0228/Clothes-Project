@@ -110,7 +110,7 @@
                     >📝 <%= post.title%></a
                   >
                   <p class="post-date"><%= post.date%></p>
-                  <p class="post-views"><%= post.views%></p>
+                  <p class="post-views"><%= post.views || 0%></p>
                 </div>
                 <% } %>
               </div>

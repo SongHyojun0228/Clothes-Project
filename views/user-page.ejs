@@ -14,7 +14,9 @@
 
       <div id="container">
         <div id="left-container">
-          <a href="/user/<%= user.nickname%>" id="nickname"><%= user.nickname%></a>
+          <a href="/user/<%= user.nickname%>" id="nickname"
+            ><%= user.nickname%></a
+          >
           <p id="date"><%= user.date%> 가입</p>
           <a id="upload-post-btn" href="/upload-post">카페 글쓰기</a>
 
@@ -37,9 +39,19 @@
 
         <div id="right-container">
           <div id="user-info-container">
-            <div id="profile-img">
+            <div id="profile-img-container">
               <% if (user.profileImg) { %>
-              <img src="<%= user.profileImg %>" alt="profile-img" />
+              <img
+                id="profile-preview"
+                src="<%= user.profileImg %>"
+                alt="profile-img"
+              />
+              <% } else { %>
+              <img
+                id="profile-preview"
+                src="/images/profile/default_profile.png"
+                alt="profile-img"
+              />
               <% } %>
             </div>
             <div id="user-info">
@@ -70,19 +82,18 @@
                     >📝 <%= post.title%></a
                   >
                   <p class="post-date"><%= post.date%></p>
-                  <p class="post-views"><%= post.views%></p>
+                  <p class="post-views"><%= post.views || 0%></p>
                 </div>
                 <% } %>
               </div>
 
               <div class="pagination">
-                <% for (let i = 1; i <= totalPages; i++) { %>
-                  <% if (i === currentPage) { %>
-                    <span class="page-number active"><%= i %></span>
-                  <% } else { %>
-                    <a href="?page=<%= i %>" class="page-number"><%= i %></a>
-                  <% } %>
-                <% } %>
+                <% for (let i = 1; i <= totalPages; i++) { %> <% if (i ===
+                currentPage) { %>
+                <span class="page-number active"><%= i %></span>
+                <% } else { %>
+                <a href="?page=<%= i %>" class="page-number"><%= i %></a>
+                <% } %> <% } %>
               </div>
             </div>
           </div>

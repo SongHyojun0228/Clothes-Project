@@ -40,8 +40,28 @@
           <div id="post-info">
             <a href="free-cafe" id="post-kind"><%= post.post_kind%> > </a>
             <p id="title"><%= post.title %></p>
-            <p id="user-nickname"><%= user.nickname%></p>
-            <p id="post-date"><%= post.date %></p>
+            <div id="post-profile">
+              <% if (profile) { %>
+                <a href="/user/<%= post.author %>">
+                  <img src="<%= profile %>" alt="작성자 프로필" class="author-profile-img" />
+                </a>
+              <% } else { %>
+                <a href="/user/<%= post.author %>">
+                  <img src="/images/profile/default_profile.png" alt="기본 프로필" class="author-profile-img" />
+                </a>
+              <% } %>
+              <a href="/user/<%= post.author %>" id="user-nickname"><%= post.author %></a>
+            </div>
+            
+            <div id="detail-container">
+              <p id="post-date"><%= post.date %></p>
+              <% if(post.author === user.nickname ) { %>
+                <div class="authority-container">
+                  <a href="/edit-post" class="authority">수정</a>
+                  <button id="delete-btn" class="authority">삭제</button>
+                </div>
+              <% } %>
+            </div>
           </div>
 
           <div id="content-container">
@@ -66,7 +86,7 @@
                 <img src="<%= post.likedUsers && post.likedUsers.includes(user.nickname) ? '/images/heart/heart_red.png' : '/images/heart/heart_empty.png' %>"
                   id="heart"
                   alt="heart-img">
-                  <span id="heart-text">좋아요</span>
+                  <!-- <span id="heart-text">좋아요</span> -->
               </button>
               <span id="like-count"><%= post.likes || 0 %></span>
             </div>
@@ -76,7 +96,14 @@
             <ul id="comment-list">
                 <% for(const comment of comments) { %>
                     <li class="comment-item">
-                        <p class="user-info"><%= comment.author %></p>
+                      <div class="comment-profile">
+                        <a href="/user/<%= comment.author %>">
+                          <img src="<%= comment.profileImg %>" alt="작성자 프로필" class="comment-author-img" />
+                        </a>
+                        <a href="/user/<%= comment.author %>">
+                          <p class="user-info"><%= comment.author %></p>
+                        </a>
+                      </div>
                         <p class="comment"><%= comment.comment %></p>
                         <p class="date"><%= comment.date %></p>
                       </li>

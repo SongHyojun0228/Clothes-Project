@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeDefaultProfileFeature();
 });
 
-/* 📌 프로필 변경 버튼 기능 */
+/* 프로필 변경 버튼 기능 */
 function initializeProfileChangeFeature() {
   const profileChangeTextElement = document.getElementById("profile-btn");
   const profileChangeInputElement = document.getElementById("profileImg");
@@ -22,7 +22,7 @@ function initializeProfileChangeFeature() {
     !profileCancelBtnElement ||
     !profileSaveBtnElement
   ) {
-    console.error("❌ 필수 요소를 찾을 수 없습니다.");
+    console.error("필수 요소를 찾을 수 없습니다.");
     return;
   }
 

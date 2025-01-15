@@ -28,6 +28,17 @@ body {
   padding: 0;
   font-size: 1.5rem;
   text-align: center;
+
+  color: rgb(27, 32, 40);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(27, 32, 40);
+}
+
+button {
+  font-family: inherit;
 }
 
 #main-header {
@@ -134,12 +145,10 @@ footer div p:hover {
 #name {
   font-size: 1.5rem;
   font-weight: 900;
-  color: rgb(27, 32, 40);
 }
 
 #name2 {
   font-weight: 700;
-  color: rgb(27, 32, 40);
 }
 
 .btn {

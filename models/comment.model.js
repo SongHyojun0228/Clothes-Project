@@ -26,6 +26,28 @@ class Comment {
       .collection("comments")
       .countDocuments({ postId: new ObjectId(postId) });
   }
+
+  static async findByPostId(postId) {
+    const comments = await db
+      .getDb()
+      .collection("comments")
+      .find({ postId: new ObjectId(postId) })
+      .toArray();
+
+    for (let comment of comments) {
+      const user = await db
+        .getDb()
+        .collection("users")
+        .findOne(
+          { nickname: comment.author },
+          { projection: { profileImg: 1 } }
+        );
+
+      comment.profileImg = user && user.profileImg ? user.profileImg : "/images/profile/default_profile.png";
+    }
+
+    return comments;
+  }
 }
 
 module.exports = Comment;

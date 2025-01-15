@@ -402,16 +402,23 @@ async function getCafePost(req, res) {
   const user = await User.findByNickname(sessionUser.nickname);
   const post = await Post.getById(postId);
 
+  if (!post) {
+    return res.status(404).send("게시물을 찾을 수 없습니다.");
+  }
+
   await Post.incrementViews(postId);
 
-  const comments = await Comment.getByPostId(postId);
+  // 📌 댓글 가져오기 (작성자의 프로필 포함)
+  const comments = await Comment.findByPostId(postId);
 
   res.render("post-detail", {
-    user: user,
-    post: { ...post, views: post.views + 1 },
-    comments: comments,
+    user,
+    post,
+    profile: post.authorProfile, 
+    comments, 
   });
 }
+
 
 async function postComment(req, res) {
   const sessionUser = req.session.user;

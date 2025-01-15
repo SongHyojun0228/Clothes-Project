@@ -20,7 +20,7 @@
   font-weight: 900;
   margin: 0;
 
-  color: rgb(27, 32, 40);
+  
 }
 
 #left-container #nickname:hover {
@@ -45,7 +45,7 @@
   padding: 0.2rem 0.4rem;
 
   background-color: rgb(224, 218, 207);
-  color: rgb(27, 32, 40);
+  
   border-radius: 4px;
 }
 
@@ -64,7 +64,7 @@
   padding-block: 0.3rem;
   padding-left: 0.5rem;
 
-  color: rgb(27, 32, 40);
+  
   border-top: 3px solid rgb(27, 32, 40);
 }
 
@@ -106,7 +106,7 @@
   padding-block: 0.1rem;
   padding-left: 0.5rem;
 
-  color: rgb(27, 32, 40);
+  
 }
 
 #left-container .post-items:hover {
@@ -170,7 +170,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  color: rgb(27, 32, 40);
+  
 }
 
 #right-container .post-card .post-title:hover {
@@ -182,7 +182,7 @@
 #right-container .post-card .comment {
   font-size: 0.8rem;
   font-weight: 900;
-  color: rgb(27, 32, 40);
+  
 }
 
 #right-container .post-card .new-badge {
@@ -203,7 +203,7 @@
   font-size: 0.8rem;
   font-weight: 500;
   text-decoration: none;
-  color: rgb(27, 32, 40);
+  
 }
 
 #right-container .post-card .post-author:hover {
@@ -229,7 +229,7 @@
 
 #right-container .pagination .page-number {
   display: block;
-  color: rgb(27, 32, 40);
+  
   font-size: 1rem;
   margin: 0;
   margin-inline: 0.5rem;

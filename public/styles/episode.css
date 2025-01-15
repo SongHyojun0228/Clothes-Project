@@ -1,7 +1,7 @@
 h2 {
   margin: 4rem;
   text-align: center;
-  color: rgb(27, 32, 40);
+   
 }
 
 #container {
@@ -18,14 +18,14 @@ h2 {
 }
 
 .hightlight {
-  color: rgb(27, 32, 40);
+   
   font-weight: 500;
 }
 
 .subheadline {
   padding-top: 3rem;
   font-size: 1.2rem;
-  color: rgb(27, 32, 40);
+   
   text-align: left;
   font-weight: bold;
 }
@@ -45,7 +45,7 @@ img {
   display: block;
   text-align: left;
   font-size: 1.2rem;
-  color: rgb(27, 32, 40);
+   
 }
 
 .next-episode:hover {

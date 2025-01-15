@@ -25,7 +25,7 @@ form {
   font-weight: 900;
   margin: 0;
 
-  color: rgb(27, 32, 40);
+   
 }
 
 #left-container #nickname:hover {
@@ -50,7 +50,7 @@ form {
   padding: 0.2rem 0.4rem;
 
   background-color: rgb(224, 218, 207);
-  color: rgb(27, 32, 40);
+   
   border-radius: 4px;
 }
 
@@ -70,7 +70,7 @@ form {
   padding-block: 0.3rem;
   padding-left: 0.5rem;
 
-  color: rgb(27, 32, 40);
+   
   border-top: 3px solid rgb(27, 32, 40);
   border-bottom: 3px solid rgb(224, 218, 207);
 }
@@ -112,7 +112,7 @@ form {
   padding-block: 0.1rem;
   padding-left: 0.5rem;
 
-  color: rgb(27, 32, 40);
+   
 }
 
 #left-container .post-items:hover {
@@ -171,7 +171,7 @@ form {
   margin-top: 0.5rem;
   font-weight: 500;
   font-size: 0.9rem;
-  color: rgb(27, 32, 40);
+   
   border: 1px solid rgb(27, 32, 40);
   border-radius: 6px;
 }
@@ -204,7 +204,7 @@ form {
   background-color: rgb(224, 218, 207);
   border: 1px solid rgb(27, 32, 40);
   border-radius: 6px;
-  color: rgb(27, 32, 40);
+   
   margin: 0;
 }
 
@@ -220,7 +220,7 @@ form {
 #right-container #user-info-container #profile-img-container #default-text {
   font-size: 0.8rem;
   font-weight: 500;
-  color: rgb(27, 32, 40);
+   
   background: none;
   border: none;
   margin: 0;
@@ -253,7 +253,7 @@ form {
   font-weight: 900;
   padding: 0;
   margin: 0;
-  color: rgb(27, 32, 40);
+   
 }
 
 #right-container #user-info-container #user-date {
@@ -269,12 +269,12 @@ form {
   font-weight: 500;
   padding: 0;
   margin: 0;
-  color: rgb(27, 32, 40);
+   
 }
 
 #right-container #user-info-container p {
   font-size: 1rem;
-  color: rgb(27, 32, 40);
+   
 }
 
 #right-container #post-container {
@@ -289,7 +289,7 @@ form {
 #right-container #post-container #category-container p {
   margin-right: 1rem;
   font-size: 0.9rem;
-  color: rgb(27, 32, 40);
+   
 }
 
 #title {
@@ -304,7 +304,7 @@ form {
   font-size: 0.9rem;
   font-weight: 700;
   margin: 0;
-  color: rgb(27, 32, 40);
+   
 }
 
 #post-date {
@@ -312,7 +312,7 @@ form {
   font-size: 0.9rem;
   font-weight: 700;
   margin: 0;
-  color: rgb(27, 32, 40);
+   
 }
 
 #post-views {
@@ -320,7 +320,7 @@ form {
   font-size: 0.9rem;
   font-weight: 700;
   margin: 0;
-  color: rgb(27, 32, 40);
+   
 }
 
 .post-item {
@@ -339,7 +339,7 @@ form {
   margin: 0;
 
   text-decoration: none;
-  color: rgb(27, 32, 40);
+   
 }
 
 .post-title:hover {
@@ -374,7 +374,7 @@ form {
 
 .pagination .page-number {
   display: block;
-  color: rgb(27, 32, 40);
+   
   font-size: 1rem;
   margin: 0;
   margin-inline: 0.5rem;
