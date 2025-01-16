@@ -6,7 +6,7 @@
 
   padding-block: 2rem;
   width: 50rem;
-  height: 50rem;
+  height: 65rem;
   border-radius: 10px;
   margin: auto;
   margin-top: 4rem;
@@ -22,9 +22,10 @@
 
   margin: auto;
   width: 46rem;
-  height: 46rem;
-  border: 3px dashed rgb(234, 207, 31);
-  border-style: dashed double;
+  height: 61rem;
+  border: 3px dashed rgb(156, 59, 64);
+  background-color: white;
+  /* border-style: dashed double; */
   border-radius: 10px;
 }
 
@@ -37,17 +38,17 @@ form {
 
 .form-item {
   width: 30rem;
-  margin: auto;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
+  justify-content: center;
   align-items: baseline;
 }
 
 label {
   margin-block: 2rem 0.5rem;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding-left: 0.3rem;
 }
 
@@ -55,9 +56,9 @@ label {
   font-size: 1rem;
   font-weight: bold;
   padding-left: 0.3rem;
-  margin: 0;
+  margin: auto;
   margin-top: 0.3rem;
-  color: rgb(234, 207, 31);
+  color: rgb(156, 59, 64);
 }
 
 .caution {
@@ -65,41 +66,78 @@ label {
   font-size: 1rem;
   font-weight: bold;
   padding-left: 0.3rem;
-  margin: 0;
+  margin: auto;
   margin-top: 0.3rem;
   color: rgb(156, 59, 64);
   /* color: rgb(234, 207, 31); */
 }
 
-input {
+.signup-input {
+  margin: auto;
   padding: 0.3rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 28.4rem;
   border: none;
-  border-bottom: 2px solid rgb(234, 207, 31);
+  border-bottom: 2px solid rgb(27, 32, 40);
 
-  color: rgb(234, 207, 31);
-  background-color: rgb(27, 32, 40);
+  color: rgb(27, 32, 40);
 }
 
-input:focus {
+.signup-input:focus {
   outline: none;
 }
 
-input::placeholder {
-  color: rgb(234, 207, 31);
+.signup-input::placeholder {
+  color: rgb(27, 32, 40, 0.5);
   font-size: 1rem;
 }
 
-input:-webkit-autofill {
-  background-color: rgb(27, 32, 40) !important;
-  color: rgb(234, 207, 31) !important;
-  -webkit-box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important;
-  box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important;
+.signup-input:-webkit-autofill {
+  background-color: white !important;
+  /* color: rgb(234, 207, 31) !important; */
+  /* -webkit-box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important; */
+  box-shadow: 0 0 0px 1000px white inset !important;
 }
 
-input:-webkit-autofill::first-line {
+/* .signup-input:-webkit-autofill::first-line {
   color: rgb(234, 207, 31) !important;
+} */
+
+#zip-code {
+  display: flex;
+  width: 28.4rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+#zip-code #sample4_postcode {
+  width: 20rem;
+  border: none;
+  border-bottom: 2px solid rgb(27, 32, 40);
+  font-size: 1rem;
+}
+
+#zip-code #sample4_postcode::placeholder {
+  color: rgb(27, 32, 40, 0.5);
+  font-size: 1rem;
+}
+
+#zip-code #sample4_postcode:focus {
+  outline: none;
+}
+
+#zip-code #zip-button {
+  background-color: white;
+  font-size: 1rem;
+  padding: 0.4rem;
+  border: 1.2px solid rgb(27, 32, 40);
+}
+
+#zip-code #zip-button:hover {
+  color: rgb(234, 207, 31);
+  background-color: rgb(27, 32, 40);
+  border: 1.2px dashed rgb(234, 207, 31);
 }
 
 #btn-container {
@@ -114,35 +152,65 @@ button,
 
   width: 7rem;
 
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 800;
 
   padding: 0.5rem 0.8rem;
   margin: 2rem 0.5rem;
 
-  border: 2px dotted rgb(27, 32, 40);
+  border: 2px dotted rgb(224, 218, 207);
   border-radius: 4px;
-  background-color: rgb(224, 218, 207);
+  color: rgb(224, 218, 207);
+  background-color: rgb(27, 32, 40);
 }
 
 button:hover,
 #cancelbutton:hover {
-  font-weight: bold;
-  color: rgb(224, 218, 207);
-  background-color: rgb(156, 59, 64);
-  border: 2px dotted rgb(224, 218, 207);
+  font-weight: 900;
+  color: rgb(234, 207, 31);
+  border: 2px dotted rgb(234, 207, 31);
+}
+
+#other-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #other-page a {
-  color: rgb(234, 207, 31);
+  color: rgb(27, 32, 40);
   font-size: 1rem;
+  font-weight: 500;
+  margin: 0.3rem;
 }
 
 #other-page a:hover {
   color: rgb(156, 59, 64);
-  font-weight: bold;
+  font-weight: 900;
 }
 
 #other-page span {
-  color: rgb(224, 218, 207);
+  color: rgb(156, 59, 64);
+}
+
+@media(max-width: 60rem) {
+  #form-container {
+  width: 30rem; 
+  }
+
+  #yellow-line {
+    width: 26rem;
+  }
+
+  .form-item {
+    width: 20rem;
+  }
+
+  .signup-input, #zip-code {
+    width: 18rem;
+  }
+
+  #zip-code #sample4_postcode {
+    width: 10rem;
+  }
 }

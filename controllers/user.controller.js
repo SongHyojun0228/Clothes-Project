@@ -5,7 +5,21 @@ function getSignup(req, res) {
 }
 
 async function Signup(req, res) {
-  const { email, password, confirmpassword, name, nickname } = req.body;
+  const {
+    email,
+    password,
+    confirmpassword,
+    name,
+    nickname,
+    postcode,
+    roadAddress,
+    jibunAddress,
+    detailAddress,
+    extraAddress,
+  } = req.body;
+
+  console.log("Received body:", req.body);
+
   const error = {};
 
   const existingUser = await User.findByEmail(email);
@@ -20,7 +34,8 @@ async function Signup(req, res) {
   if (!password) {
     error.passwordMessage = "비밀번호를 입력하세요.";
   } else {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*[0-9!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/;
+    const passwordRegex =
+      /^(?=.*[A-Za-z])(?=.*[0-9!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,16}$/;
     if (!passwordRegex.test(password)) {
       error.passwordMessage =
         "비밀번호는 영어, 숫자, 특수기호 중 2가지 이상을 포함하고 8-16자 사이여야 합니다.";
@@ -48,7 +63,15 @@ async function Signup(req, res) {
     return res.render("sign-up", { error });
   }
 
-  const newUser = new User(email, password, name, nickname);
+  const addresses = {
+    postcode,
+    roadAddress,
+    jibunAddress,
+    detailAddress,
+    extraAddress,
+  };
+
+  const newUser = new User(email, password, name, nickname, null, 0, addresses);
   await newUser.save();
 
   res.redirect("login");
@@ -76,7 +99,10 @@ async function Login(req, res) {
     return res.render("login", { error });
   }
 
-  const isPasswordCorrect = await User.verifyPassword(password, existingUser.password);
+  const isPasswordCorrect = await User.verifyPassword(
+    password,
+    existingUser.password
+  );
   if (!isPasswordCorrect) {
     error.passwordMessage = "비밀번호가 일치하지 않습니다.";
     return res.render("login", { error });

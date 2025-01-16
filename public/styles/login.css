@@ -23,8 +23,9 @@
   margin: auto;
   width: 46rem;
   height: 28rem;
-  border: 3px dashed rgb(234, 207, 31);
-  border-style: dashed double;
+  border: 3px dashed rgb(156, 59, 64);
+  /* border-style: dashed double; */
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -65,10 +66,10 @@ input {
   font-size: 1.2rem;
   width: 28.4rem;
   border: none;
-  border-bottom: 2px solid rgb(234, 207, 31);
+  border-bottom: 2px solid rgb(27, 32, 40);
 
   color: rgb(234, 207, 31);
-  background-color: rgb(27, 32, 40);
+  background-color: white;
 }
 
 input:focus {
@@ -76,19 +77,19 @@ input:focus {
 }
 
 input::placeholder {
-  color: rgb(234, 207, 31);
+  color: rgb(27, 32, 40, 0.5);
 }
 
 input:-webkit-autofill {
-  background-color: rgb(27, 32, 40) !important;
-  color: rgb(234, 207, 31) !important;
-  -webkit-box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important;
-  box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important;
+  background-color: white !important;
+  /* color: rgb(234, 207, 31) !important; */
+  /* -webkit-box-shadow: 0 0 0px 1000px rgb(27, 32, 40) inset !important; */
+  box-shadow: 0 0 0px 1000px white inset !important;
 }
 
-input:-webkit-autofill::first-line {
+/* input:-webkit-autofill::first-line {
   color: rgb(234, 207, 31) !important;
-}
+} */
 
 #btn-container {
   display: flex;
@@ -108,29 +109,55 @@ button,
   padding: 0.5rem 0.8rem;
   margin: 2rem 0.5rem;
 
-  border: 2px dotted rgb(27, 32, 40);
+  color: rgb(224, 218, 207);
+  border: 2px dotted rgb(224, 218, 207);
   border-radius: 4px;
-  background-color: rgb(224, 218, 207);
+  background-color: rgb(27, 32, 40);
 }
 
 button:hover,
 #cancelbutton:hover {
   font-weight: bold;
-  color: rgb(224, 218, 207);
-  background-color: rgb(156, 59, 64);
-  border: 2px dotted rgb(224, 218, 207);
+  color: rgb(234, 207, 31);
+  border: 2px dotted rgb(234, 207, 31);
+}
+
+#other-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #other-page a {
-  color: rgb(234, 207, 31);
+  color: rgb(27, 32, 40);
   font-size: 1rem;
+  font-weight: 500;
+  margin: 0.3rem;
 }
 
 #other-page a:hover {
   color: rgb(156, 59, 64);
-  font-weight: bold;
+  font-weight: 900;
 }
 
 #other-page span {
-  color: rgb(224, 218, 207);
+  color: rgb(156, 59, 64);
+}
+
+@media(max-width: 60rem) {
+  #form-container {
+  width: 30rem; 
+  }
+
+  #yellow-line {
+    width: 26rem;
+  }
+
+  .form-item {
+    width: 20rem;
+  }
+
+  input {
+    width: 18rem;
+  }
 }

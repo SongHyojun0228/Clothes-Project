@@ -2,18 +2,27 @@ const db = require("../data/database");
 const bcrypt = require("bcrypt");
 
 class User {
-  constructor(email, password, name, nickname, date = null, visited = 0) {
+  constructor(email, password, name, nickname, date = null, visited = 0, addresses = []) {
     this.email = email;
     this.password = password;
     this.name = name;
     this.nickname = nickname;
     this.date = date || new Date().toISOString().split("T")[0];
     this.visited = visited;
+    this.addresses = addresses; 
   }
 
   async save() {
-    this.password = await bcrypt.hash(this.password, 12);
-    return await db.getDb().collection("users").insertOne(this);
+    const hashedPassword = await bcrypt.hash(this.password, 10); 
+    return await db.getDb().collection("users").insertOne({
+      email: this.email,
+      password: hashedPassword,
+      name: this.name,
+      nickname: this.nickname,
+      date: this.date,
+      visited: this.visited,
+      addresses: this.addresses,
+    });
   }
 
   static async findByEmail(email) {
@@ -48,7 +57,6 @@ class User {
       .collection("users")
       .updateOne({ nickname }, { $unset: { profileImg: "" } });
   }
-  
 }
 
 module.exports = User;
