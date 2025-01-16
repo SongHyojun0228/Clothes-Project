@@ -50,7 +50,18 @@ function addCommentToList(newComment, commentList) {
   const li = document.createElement("li");
   li.className = "comment-item";
   li.innerHTML = `
-    <p class="user-info">${newComment.author}</p>
+    <div class="comment-profile">
+      <a href="/user/${newComment.author}">
+        <img src="${
+          newComment.profileImg || "/images/profile/default_profile.png"
+        }" 
+             alt="작성자 프로필" 
+             class="comment-author-img" />
+      </a>
+      <a href="/user/${newComment.author}">
+        <p class="user-info">${newComment.author}</p>
+      </a>
+    </div>
     <p class="comment">${newComment.comment}</p>
     <p class="date">${newComment.date}</p>
   `;

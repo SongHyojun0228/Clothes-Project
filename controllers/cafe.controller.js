@@ -4,6 +4,22 @@ const Comment = require("../models/comment.model");
 
 const { ObjectId } = require("mongodb");
 
+function getTodayFormattedDate() {
+  const currentDate = new Date();
+  return `${currentDate.getFullYear()}.${String(
+    currentDate.getMonth() + 1
+  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
+}
+
+async function preparePostData(posts, today) {
+  return await Promise.all(
+    posts.map(async (post) => {
+      const commentCount = await Comment.countByPostId(post._id);
+      return { ...post, commentCount, isNew: post.date.startsWith(today) };
+    })
+  );
+}
+
 async function getCafe(req, res) {
   const sessionUser = req.session.user;
   const user = await User.findByNickname(sessionUser.nickname);
@@ -16,17 +32,8 @@ async function getCafe(req, res) {
 
   const posts = await Post.getPaginated(page, perPage);
 
-  const currentDate = new Date();
-  const today = `${currentDate.getFullYear()}.${String(
-    currentDate.getMonth() + 1
-  ).padStart(2, "0")}.${String(currentDate.getDate()).padStart(2, "0")}`;
-
-  const postsWithComments = await Promise.all(
-    posts.map(async (post) => {
-      const commentCount = await Comment.countByPostId(post._id);
-      return { ...post, commentCount, isNew: post.date.startsWith(today) };
-    })
-  );
+  const today = getTodayFormattedDate();
+  const postsWithComments = await preparePostData(posts, today);
 
   res.render("cafe", {
     user: { ...user, visited: user.visited + 1 },
@@ -441,20 +448,23 @@ async function postComment(req, res) {
     return res.status(400).json({ error: "댓글 내용을 입력하세요." });
   }
 
-  const newComment = {
-    postId: new ObjectId(postId),
-    comment: comment,
-    author: sessionUser.nickname,
-    date: formattedDate,
-  };
+  try {
+    const user = await User.findByNickname(sessionUser.nickname);
+    const newComment = {
+      postId: new ObjectId(postId),
+      comment: comment,
+      author: sessionUser.nickname,
+      date: formattedDate,
+      profileImg: user.profileImg || "/images/profile/default_profile.png",
+    };
 
-  await Comment.create(newComment);
+    await Comment.create(newComment);
 
-  res.status(201).json({
-    comment: newComment.comment,
-    author: newComment.author,
-    date: newComment.date,
-  });
+    res.status(201).json(newComment);
+  } catch (error) {
+    console.error("댓글 등록 중 오류 발생:", error);
+    res.status(500).json({ error: "댓글 등록 실패" });
+  }
 }
 
 // 좋아요 기능📍📌
@@ -527,6 +537,7 @@ async function deletePost(req, res) {
       return res.status(404).send("게시물을 찾을 수 없습니다.");
     }
 
+    // 이미지 파일 삭제
     if (post.images && post.images.length > 0) {
       post.images.forEach((imagePath) => {
         const filePath = path.join(__dirname, "..", imagePath);
@@ -536,9 +547,10 @@ async function deletePost(req, res) {
       });
     }
 
+    await Comment.deleteByPostId(postId);
     await Post.deleteById(postId);
-    console.log("게시물 삭제 성공:", postId);
 
+    console.log("게시물 삭제 성공:", postId);
     res.redirect("/my-page");
   } catch (err) {
     console.error("게시물 삭제 중 오류 발생:", err);
