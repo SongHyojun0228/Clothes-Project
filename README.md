@@ -80,8 +80,8 @@
 <h3>1️⃣ 프로젝트 클론</h3>
 
 ```
-git clone https://github.com/SongHyojun0228/Gym-Project.git
-cd Gym-Project
+git clone https://github.com/SongHyojun0228/Clothes-Project.git
+cd Clothes-Project
 ```
 
 <h3>2️⃣ 패키지 설치</h3>
