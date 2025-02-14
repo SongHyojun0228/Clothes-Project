@@ -27,42 +27,43 @@
 
 <h2>📸 프로젝트 사진</h2>
 ### 🏠 메인 화면
-<img width="1920" alt="메인 화면" src="https://github.com/user-attachments/assets/85bfac56-1aa5-430a-b37c-9022918591ff" />
+<img width="1920" alt="Image" src="https://github.com/user-attachments/assets/20024f67-b320-40f2-a99d-7c55c85e935a" />
 
 ---
 
 ### 📝 회원가입 & 로그인
 | 회원가입 | 로그인 |
 |:-:|:-:|
-| <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/6d14d320-9bf1-4167-9d39-8ed71111c49c" /> | <img width="1920" alt="로그인" src="https://github.com/user-attachments/assets/137cbd72-a925-474e-b72c-9e9456c0c715" /> |
+| <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/9e91b0cd-9658-4e78-8cf9-31dabcb66dc3" /> | <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/fd41e3e3-25e5-4bb5-89ae-377d8e4f4fd9" /> |
+
+---
+
+### 🏷️ 브랜드 
+<img width="1920" alt="Image" src="https://github.com/user-attachments/assets/e8c37f43-6334-4f81-893f-9fef7a44028d" />
+
+---
+
+### 📖 에피소드
+| 에피소드 메인화면 | 에피소드 2 |
+|:-:|:-:|
+| <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/3ea39604-3b64-4641-afaf-f7eeafc49325" /> | <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/ffd29d0c-be1d-4cfb-bb38-3a18751a07f3" /> |
 
 ---
 
 ### 💬 커뮤니티
 | 커뮤니티 1 | 커뮤니티 2 |
 |:-:|:-:|
-| <img width="1920" alt="커뮤니티" src="https://github.com/user-attachments/assets/2ba28ad6-acad-4852-ac25-cdc737852e10" /> | <img width="1920" alt="커뮤니티" src="https://github.com/user-attachments/assets/cf03df98-4e21-42fb-ba75-8f2b45ab384f" /> |
+| <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/f5c04094-3fa8-4e33-a2b2-828fe36b3ca9" /> | <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/ae9f7d92-aa77-4226-91e0-f208cc685d92" /> |
 
 ---
 
-### 🛒 상점 & 장바구니
-| 상점 | 장바구니 |
-|:-:|:-:|
-| <img width="1920" alt="상점" src="https://github.com/user-attachments/assets/c27aec31-e2f6-43ca-b86d-4c91896d8d84" /> | <img width="1920" alt="장바구니" src="https://github.com/user-attachments/assets/4ab4b367-9b6c-44f8-87c1-e8ad3d426466" /> |
-
----
-
-### 🛒 구매 & 성공
-| 구매 페이지 | 구매 성공 |
-|:-:|:-:|
-| <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/4f8d4922-4302-4951-8599-1ff7fa20e739" /> | <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/6843158e-75c0-43dc-850c-2e05165310fb" />|
+### ✏️ 글쓰기 
+<img width="1920" alt="Image" src="https://github.com/user-attachments/assets/e8c37f43-6334-4f81-893f-9fef7a44028d" />
 
 ---
 
 ### 🙍 마이페이지
-| 마이페이지 1 | 마이페이지 2 |
-|:-:|:-:|
-| <img width="1920" alt="마이페이지" src="https://github.com/user-attachments/assets/2567cbc9-9cba-49eb-85a8-8c4540e33c7d" /> | <img width="1920" alt="Image" src="https://github.com/user-attachments/assets/094352b7-2c0a-491d-83e4-6bb82d261cb0" /> |
+<img width="1920" alt="Image" src="https://github.com/user-attachments/assets/202ecc79-0047-4b5a-a952-2f417d8e74fd" />
 
 <br>
 <br>
@@ -89,25 +90,13 @@ cd Gym-Project
 npm install
 ```
 
-<h3>3️⃣ 환경 변수 설정 (.env)</h3>
-
-<p>이 프로젝트를 실행하려면, Gym-projec 폴더 내 최상위에 `.env` 파일을 생성하고 아래 내용을 입력해야 합니다.</p>
-<p>** [SMS_SENDER=your_phone_number_here]만 입력하셔도 됩니다. **</p>
-<p>** [SMS_SENDER=your_phone_number_here]만 입력했을 시에, 터미넬에 인증번호가 출력됩니다. **</p>
-
-```
-SMS_API_KEY=your_api_key_here // 입력하지 않으셔도 됩니다.
-SMS_API_SECRET=your_api_secret_here // 입력하지 않으셔도 됩니다.
-SMS_SENDER=your_phone_number_here
-```
-
-<h3>4️⃣ 서버 실행</h3>
+<h3>3️⃣ 서버 실행</h3>
 
 ```
 nodemon app.js
 ```
 
-<h3>5️⃣ 로컬 환경에서 접속</h3>
+<h3>4️⃣ 로컬 환경에서 접속</h3>
 
 ```
 http://localhost:3000
@@ -117,14 +106,8 @@ http://localhost:3000
 <br>
 
 <h2>🙋🏻‍♂️ 회원 정보</h2>
-<h3>관리자</h3>
-<p>ID : test</p>
-<p>PW : test12345!</p>
 
-<h3>회원1</h3>
-<p>ID : thdgywns2300</p>
+<h3>로그인 정보</h3>
+<p>ID : thdgywns2300@gmail.com</p>
 <p>PW : song0228!</p>
 
-<h3>회원2</h3>
-<p>ID : hyojun2300</p>
-<p>PW : song0228!</p>
