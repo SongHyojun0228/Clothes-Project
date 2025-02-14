@@ -1,4 +1,4 @@
-<img src="https://github.com/user-attachments/assets/ad1ffd28-2e11-40cb-b2a9-0fa842de3980" alt="Mr.Olympia">
+<img width="1166" alt="Image" src="https://github.com/user-attachments/assets/d535ddd6-4ea0-450a-811e-4cef31b7f769" />
 
 <br>
 
