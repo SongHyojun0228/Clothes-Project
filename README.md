@@ -9,6 +9,9 @@
 <p>MYCLOSET 사용자들은 발매 정보나 착장 소개 등과 같은 패션 정보를 얻을 수 있습니다.</p>
 <p>또한, 다양한 의견, 가치관을 가진 사람들끼리 소통할 수 있습니다.</p>
 
+<h3>API 명세서</h3>
+> https://spotless-seeker-00f.notion.site/MyCloset-API-22e13ddc688b8032bd03e12862047dc2?pvs=74
+
 <br>
 <br>
 
