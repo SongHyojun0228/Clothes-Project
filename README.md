@@ -1,8 +1,5 @@
-<img width="1166" alt="Image" src="https://github.com/user-attachments/assets/d535ddd6-4ea0-450a-811e-4cef31b7f769" />
-
-<br>
-
 <h1>👖 MYCLOSET - 패션 커뮤니티</h1>
+<img width="1166" alt="Image" src="https://github.com/user-attachments/assets/d535ddd6-4ea0-450a-811e-4cef31b7f769" />
 
 <br>
 <br>
