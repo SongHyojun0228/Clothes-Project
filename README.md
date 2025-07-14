@@ -11,6 +11,9 @@
 ### API 명세서
 > https://spotless-seeker-00f.notion.site/MyCloset-API-22e13ddc688b8032bd03e12862047dc2?pvs=74
 
+### Notion
+> https://spotless-seeker-00f.notion.site/16513ddc688b806aacb5f59a6befa64e?p=16513ddc688b81d5a99de9a646bb5ab7&pm=c
+
 <br><br>
 
 ## 📌 선정이유
